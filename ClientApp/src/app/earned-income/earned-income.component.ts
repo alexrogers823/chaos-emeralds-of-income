@@ -7,9 +7,17 @@ import { Component } from "@angular/core";
 })
 export class EarnedIncomeComponent {
   earned = {
-    job1: '$5,000',
-    job2: '$1,000',
+    jobs: [
+      {
+        title: 'Job 1',
+        salary: '$5,000'
+      },
+      {
+        title: 'Job 2',
+        salary: '$5,000'
+      }
+    ],
     currentIncome: '$6,000',
-    articles: 'Article 1'
+    articles: ['Article 1', 'Article 2', 'Article 3']
   }
 }

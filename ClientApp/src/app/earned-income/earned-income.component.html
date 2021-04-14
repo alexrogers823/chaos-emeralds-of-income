@@ -1,7 +1,10 @@
 <h1>Earned Income</h1>
 <p>Quote here<p>
-<p>Job 1: {{earned.job1}}</p>
-<p>Job 2: {{earned.job2}}</p>
+<div *ngFor job in earned?.jobs>
+  <p>{{job.title}}: {{job.salary}}</p>
+</div>
 <p>Current income: {{earned.currentIncome}}</p>
 <p>Helpful resources</p>
-<p>{{earned.articles}}</p>
+<div *ngFor article in earned?.articles>
+  <p>{{article}}</p>
+</div>
