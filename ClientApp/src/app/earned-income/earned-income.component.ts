@@ -6,6 +6,8 @@ import { Component } from "@angular/core";
   styleUrls: ['./earned-income.component.css']
 })
 export class EarnedIncomeComponent {
+  isEditing:boolean = false
+
   earned = {
     jobs: [
       {
@@ -19,5 +21,9 @@ export class EarnedIncomeComponent {
     ],
     currentIncome: '$6,000',
     articles: ['Article 1', 'Article 2', 'Article 3']
+  }
+
+  editSalary() {
+    isEditing = true
   }
 }
