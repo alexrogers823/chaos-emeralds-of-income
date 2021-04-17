@@ -1,5 +1,8 @@
 <h1>Earned Income</h1>
-<p>Quote here<p>
+<p>{{quote.quote}} - {{quote.author}}<p>
+<p>Goal to collecting emerald: {{emeraldGoal}}</p>
+<span *ngIf="hasEmerald; else noEmerald">(Emerald here)</span>
+<ng-template #noEmerald>(Empty emerald)</ng-template>
 <div *ngFor job in earned?.jobs>
   <p>{{job.title}}: {{job.salary}}</p>
   <button (click)="editSalary()">Edit Salary</button>
