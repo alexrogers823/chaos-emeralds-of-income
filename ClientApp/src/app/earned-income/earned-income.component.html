@@ -1,15 +1,17 @@
-<h1>Earned Income</h1>
-<p>{{quote.quote}} - {{quote.author}}<p>
-<p>Goal to collecting emerald: {{emeraldGoal}}</p>
-<span *ngIf="hasEmerald; else noEmerald">(Emerald here)</span>
-<ng-template #noEmerald>(Empty emerald)</ng-template>
-<div *ngFor job in earned?.jobs>
-  <p>{{job.title}}: {{job.salary}}</p>
-  <button (click)="editSalary()">Edit Salary</button>
-  <input *ngIf="isEditing" type="text" value="$2,000">
-</div>
-<p>Current income: {{earned.currentIncome}}</p>
-<p>Helpful resources</p>
-<div *ngFor article in earned?.articles>
-  <p>{{article}}</p>
-</div>
+<emerald-component>
+  <div emerald-content>
+      <div *ngFor job in earned?.jobs>
+        <p>{{job.title}}: {{job.salary}}</p>
+        <button (click)="editSalary()">Edit Salary</button>
+        <input *ngIf="isEditing" type="text" value="$2,000">
+      </div>
+      <p>Current income: {{earned.currentIncome}}</p>
+  </div>
+
+  <div resources>
+    <p>Helpful resources</p>
+    <div *ngFor article in earned?.articles>
+      <p>{{article}}</p>
+    </div>
+  </div>
+</emerald-component>

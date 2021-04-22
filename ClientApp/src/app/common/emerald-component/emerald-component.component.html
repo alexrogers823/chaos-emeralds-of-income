@@ -1,10 +1,11 @@
-<div>
-  <h1>{{ title }}</h1>
-  <p>{{ quote }}</p>
-  <span>Goal to collecting emerald: </span>
-  <span>{{ goal }}</span>
-  <span *ngIf="hasEmerald; else noEmerald">(Emerald here)</span>
-  <ng-template #noEmerald>(Empty emerald)</ng-template>
-  <ng-content></ng-content>
-  <div class="helpful-resources"></div>
+<h1>{{ title }}</h1>
+<p>{{ quote }} - {{ author }}</p>
+<span>Goal to collecting emerald: </span>
+<span>{{ goal }}</span>
+<span *ngIf="hasEmerald; else noEmerald">(Emerald here)</span>
+<ng-template #noEmerald>(Empty emerald)</ng-template>
+<ng-content select="[emerald-content]"></ng-content>
+<div class="helpful-resources">
+  <p>Helpful resources</p>
+  <ng-content select="[resources]"></ng-content>
 </div>
