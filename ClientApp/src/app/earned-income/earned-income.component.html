@@ -1,17 +1,8 @@
-<emerald-component>
-  <div emerald-content>
-      <div *ngFor job in earned?.jobs>
-        <p>{{job.title}}: {{job.salary}}</p>
-        <button (click)="editSalary()">Edit Salary</button>
-        <input *ngIf="isEditing" type="text" value="$2,000">
-      </div>
-      <p>Current income: {{earned.currentIncome}}</p>
+<emerald-component [emerald]="earnedIncomeEmerald" [hasEmerald]="hasEarnedIncomeEmerald()">
+  <div *ngFor job in earned?.jobs>
+    <p>{{job.title}}: {{job.salary}}</p>
+    <button (click)="editSalary()">Edit Salary</button>
+    <input *ngIf="isEditing" type="text" value="$2,000">
   </div>
-
-  <div resources>
-    <p>Helpful resources</p>
-    <div *ngFor article in earned?.articles>
-      <p>{{article}}</p>
-    </div>
-  </div>
+  <p>Current income: {{earned.currentIncome}}</p>
 </emerald-component>

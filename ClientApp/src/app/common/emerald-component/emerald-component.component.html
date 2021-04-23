@@ -1,11 +1,13 @@
-<h1>{{ title }}</h1>
-<p>{{ quote }} - {{ author }}</p>
+<h1>{{ emerald.title }}</h1>
+<p>{{ emerald.quote }} - {{ emerald.author }}</p>
 <span>Goal to collecting emerald: </span>
-<span>{{ goal }}</span>
-<span *ngIf="hasEmerald; else noEmerald">(Emerald here)</span>
+<span>{{ emerald.goal }}</span>
+<span *ngIf="hasEmerald; else noEmerald">{{ emerald.emeraldImageUrl }}</span>
 <ng-template #noEmerald>(Empty emerald)</ng-template>
-<ng-content select="[emerald-content]"></ng-content>
+<ng-content></ng-content>
 <div class="helpful-resources">
   <p>Helpful resources</p>
-  <ng-content select="[resources]"></ng-content>
+  <div *ngFor resource in emerald.resources>
+    <p>{{ resource }}</p>
+  </div>
 </div>
