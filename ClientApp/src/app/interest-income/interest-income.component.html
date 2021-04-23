@@ -1,0 +1,22 @@
+<emerald-component [emerald]="interestIncomeEmerald" [hasEmerald]="hasInterestIncomeEmerald()">
+  <table>
+    <tr>
+      <th>Account Name</th>
+      <th>Interest (%)</th>
+      <th>Interest ($)</th>
+    </tr>
+    <div *ngFor account in accounts>
+      <tr>
+        <td>{{account.name}}</td>
+        <td>{{account.interestPercentage}}</td>
+        <td>{{account.interestDollar}}</td>
+      </tr>
+    </div>
+    <tr>
+      <td>Total Interest per month:</td>
+      <td></td>
+      <td>{{ calculateInterestSummary() }}</td>
+    </tr>
+  </table>
+</emerald-component>
+  

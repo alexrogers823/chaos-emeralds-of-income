@@ -41,6 +41,6 @@ export class EarnedIncomeComponent {
   }
 
   hasEarnedIncomeEmerald() {
-    return this.earned.currentIncome > this.goalIncome;
+    return this.earned.currentIncome >= this.goalIncome;
   }
 }
