@@ -1,0 +1,38 @@
+<div>
+  <div class="assets">
+    <table>
+      <tr>
+        <th>Assets:</th>
+        <th>{{ calculateTotal(assets) }}</th>
+      </tr>
+      <div *ngFor asset in assets>
+        <tr>
+          <td>{{ asset.name }}</td>
+          <td>{{ asset.amount }}</td>
+        </tr>
+      </div>
+    </table>
+  </div>
+  <div class="liabilities">
+    <table>
+      <tr>
+        <th>Liabilities:</th>
+        <th>{{ calculateTotal(liabilities) }}</th>
+      </tr>
+      <div *ngFor liability in liabilities>
+        <tr>
+          <td>{{ liability.name }}</td>
+          <td>{{ liability.amount }}</td>
+        </tr>
+      </div>
+    </table>
+  </div>
+  <div class="total-net-worth">
+    <span>Net Worth:</span>
+    <span>{{ calculateNetWorth() }}</span>
+  </div>
+</div>
+
+<footer>
+  <p>Net Worth dated as of 1/1/2021</p>
+</footer>
