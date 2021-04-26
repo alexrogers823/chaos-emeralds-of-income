@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IEmerald } from "../shared/emerald.model";
+import { IEmerald } from "../../shared/emerald.model";
 
 @Component({
   selector: 'app-earned-income',
