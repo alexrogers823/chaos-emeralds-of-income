@@ -11,6 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { EarnedIncomeComponent } from './components/earned-income/earned-income.component';
 import { EmeraldComponent } from './components/common/emerald-component/emerald-component.component';
+import { InterestIncomeComponent } from './components/interest-income/interest-income.component';
+import { NetWorthComponent } from './components/net-worth/net-worth.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { EmeraldComponent } from './components/common/emerald-component/emerald-
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
+    NetWorthComponent,
     EmeraldComponent,
-    EarnedIncomeComponent
+    EarnedIncomeComponent,
+    InterestIncomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,7 +34,9 @@ import { EmeraldComponent } from './components/common/emerald-component/emerald-
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'earned-income', component: EarnedIncomeComponent}
+      { path: 'net-worth', component: NetWorthComponent },
+      { path: 'earned-income', component: EarnedIncomeComponent },
+      { path: 'interest-income', component: InterestIncomeComponent}
     ])
   ],
   providers: [],
