@@ -5,7 +5,7 @@
       <th>Interest (%)</th>
       <th>Interest ($)</th>
     </tr>
-    <div *ngFor account in accounts>
+    <div *ngFor="let account of accounts">
       <tr>
         <td>{{account.name}}</td>
         <td>{{account.interestPercentage}}</td>

@@ -1,5 +1,5 @@
 <emerald-component [emerald]="earnedIncomeEmerald" [hasEmerald]="hasEarnedIncomeEmerald()">
-  <div *ngFor job in earned?.jobs>
+  <div *ngFor="let job of earned?.jobs">
     <p>{{job.title}}: {{job.salary}}</p>
     <button (click)="editSalary()">Edit Salary</button>
     <input *ngIf="isEditing" type="text" value="$2,000">
