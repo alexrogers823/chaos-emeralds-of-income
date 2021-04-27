@@ -5,12 +5,10 @@
         <th>Assets:</th>
         <th>{{ calculateTotal(assets) }}</th>
       </tr>
-      <div *ngFor="let asset of assets">
-        <tr>
-          <td>{{ asset.name }}</td>
-          <td>{{ asset.amount }}</td>
-        </tr>
-      </div>
+      <tr *ngFor="let asset of assets">
+        <td>{{ asset.name }}</td>
+        <td>{{ asset.amount }}</td>
+      </tr>
     </table>
   </div>
   <div class="liabilities">
@@ -19,12 +17,10 @@
         <th>Liabilities:</th>
         <th>{{ calculateTotal(liabilities) }}</th>
       </tr>
-      <div *ngFor="let liability of liabilities">
-        <tr>
-          <td>{{ liability.name }}</td>
-          <td>{{ liability.amount }}</td>
-        </tr>
-      </div>
+      <tr *ngFor="let liability of liabilities">
+        <td>{{ liability.name }}</td>
+        <td>{{ liability.amount }}</td>
+      </tr>
     </table>
   </div>
   <div class="total-net-worth">
