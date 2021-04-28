@@ -6,14 +6,14 @@
       <th>Interest ($)</th>
     </tr>
     <tr *ngFor="let account of accounts">
-      <td>{{account.name}}</td>
-      <td>{{account.interestPercentage}}</td>
-      <td>{{account.interestDollar}}</td>
+      <td>{{ account.name }}</td>
+      <td>{{ account.interestPercent | percent:'1.2-2' }}</td>
+      <td>{{ account.interestDollar | currency }}</td>
     </tr>
     <tr>
       <td>Total Interest per month:</td>
       <td></td>
-      <td>{{ calculateInterestSummary() }}</td>
+      <td>{{ calculateInterestSummary() | currency }}</td>
     </tr>
   </table>
 </emerald-component>
