@@ -21,7 +21,7 @@ export class NetWorthComponent {
     return items.reduce((acc, item) => acc + item.amount, 0);
   }
 
-  calculateNetIncome(): number {
+  calculateNetWorth(): number {
     const totalAssets = this.calculateTotal(this.assets);
     const totalLiabilities = this.calculateTotal(this.liabilities);
 

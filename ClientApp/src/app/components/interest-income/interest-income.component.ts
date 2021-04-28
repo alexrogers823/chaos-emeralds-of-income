@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IEmerald } from "../../shared/emerald.model";
+import { Emerald } from "../../shared/emerald.model";
 
 @Component({
   selector: 'interest-income',
@@ -7,7 +7,8 @@ import { IEmerald } from "../../shared/emerald.model";
 })
 export class InterestIncomeComponent {
   private goalInterest:number = 100
-  interestIncomeEmerald:IEmerald = {
+  interestIncomeEmerald:Emerald = {
+    id: 2,
     title: 'Interest Income',
     quote: '',
     author: '',

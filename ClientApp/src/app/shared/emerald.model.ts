@@ -1,4 +1,5 @@
-export interface IEmerald {
+export interface Emerald {
+  id:number
   title:string
   quote:string
   author:string
