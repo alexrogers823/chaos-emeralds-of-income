@@ -12,7 +12,35 @@ export class EarnedIncomeService {
 
   }
 
+  // getEarnedIncome() {
+  //   return this.http.get<EarnedIncome[]>(`${this._baseUrl}/GetEarnedIncome`);
+  // }
+
   getEarnedIncome() {
-    return this.http.get<EarnedIncome[]>(`${this._baseUrl}/GetEarnedIncome`);
+    return earnedIncome_sample;
   }
 }
+
+const earnedIncome_sample:EarnedIncome[] = [
+  {
+    userId: 823,
+    incomeTitle: 'Carpenter',
+    incomeAmount: 2000,
+    frequency: 'annual',
+    isCurrent: true
+  },
+  {
+    userId: 823,
+    incomeTitle: 'Plumber',
+    incomeAmount: 3000,
+    frequency: 'annual',
+    isCurrent: true
+  },
+  {
+    userId: 823,
+    incomeTitle: 'Writer',
+    incomeAmount: 2250,
+    frequency: 'annual',
+    isCurrent: true
+  },
+]
