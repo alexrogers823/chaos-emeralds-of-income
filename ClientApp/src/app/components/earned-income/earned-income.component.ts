@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { from, of } from "rxjs";
+import { map, mergeScan, scan, tap } from "rxjs/operators";
 import { EarnedIncomeService } from "src/app/services/earned-income.service";
 import { Emerald } from "../../shared/emerald.model";
 import { EarnedIncome } from "./interfaces/earned-income.model";
@@ -12,7 +14,22 @@ export class EarnedIncomeComponent implements OnInit {
   isEditing:boolean = false;
   private goalIncome:number = 5000;
 
-  jobs:EarnedIncome[];
+  earnedIncome$ = this.earnedIncomeService.earnedIncome$
+    .pipe(
+      tap(job => console.log('job posted', job))
+    );
+
+  earnedIncomeTotal$ = this.earnedIncomeService.earnedIncome$
+    .pipe(
+      mergeScan((acc:number, curr:EarnedIncome[]) => {
+        return from(curr)
+          .pipe(
+            scan((start:number, job:EarnedIncome) => start + job.incomeAmount, 0)
+          )
+      }, 0),
+      tap(output => console.log('total', output))
+    );
+
 
   earnedIncomeEmerald:Emerald = {
     id: 1,
@@ -28,12 +45,12 @@ export class EarnedIncomeComponent implements OnInit {
     ]
   };
 
-  constructor(private service: EarnedIncomeService) { }
+  constructor(private earnedIncomeService: EarnedIncomeService) { }
 
   ngOnInit() {
-    this.service.getEarnedIncome().subscribe(data => {
-      this.jobs = data;
-    })
+    // this.service.getEarnedIncome().subscribe(data => {
+    //   this.jobs = data;
+    // })
   }
 
   earned = {

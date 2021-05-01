@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { from, of } from "rxjs";
 import { EarnedIncome } from "../components/earned-income/interfaces/earned-income.model";
 
 @Injectable({
@@ -16,9 +17,8 @@ export class EarnedIncomeService {
   //   return this.http.get<EarnedIncome[]>(`${this._baseUrl}/GetEarnedIncome`);
   // }
 
-  getEarnedIncome() {
-    return earnedIncome_sample;
-  }
+  earnedIncome$ = of(earnedIncome_sample);
+
 }
 
 const earnedIncome_sample:EarnedIncome[] = [
