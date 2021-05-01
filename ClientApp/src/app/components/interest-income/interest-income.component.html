@@ -1,5 +1,5 @@
 <emerald-component [emerald]="interestIncomeEmerald" [hasEmerald]="hasInterestIncomeEmerald()">
-  <table class="table table-striped">
+  <table class="table table-striped" *ngIf="accounts$ | async as accounts">
     <tr>
       <th>Account Name</th>
       <th>Interest (%)</th>
@@ -13,7 +13,8 @@
     <tr>
       <td>Total Interest per month:</td>
       <td></td>
-      <td>{{ calculateInterestSummary() | currency }}</td>
+      <!-- <td>{{ calculateInterestSummary() | currency }}</td> -->
+      <td>{{ 10 }}</td>
     </tr>
   </table>
 </emerald-component>

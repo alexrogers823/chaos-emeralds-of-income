@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Observable } from "rxjs";
+import { InterestIncomeService } from "src/app/services/interest-income.service";
 import { Emerald } from "../../shared/emerald.model";
 import { InterestIncome } from "./interfaces/interest-income.model";
 
@@ -22,14 +24,19 @@ export class InterestIncomeComponent {
     ]
   }
 
-  accounts:InterestIncome[] = [
-    { name: 'Account 1', interestPercent: 0.0225, interestDollar: 6},
-    { name: 'Account 2', interestPercent: 0.015, interestDollar: 4.5},
-    { name: 'Account 3', interestPercent: 0.025, interestDollar: 5},
-  ]
+  constructor(private interestIncomeService:InterestIncomeService) {}
+
+  accounts$:Observable<InterestIncome[]> = this.interestIncomeService.interestIncome$;
+
+  // accounts:InterestIncome[] = [
+  //   { name: 'Account 1', interestPercent: 0.0225, interestDollar: 6},
+  //   { name: 'Account 2', interestPercent: 0.015, interestDollar: 4.5},
+  //   { name: 'Account 3', interestPercent: 0.025, interestDollar: 5},
+  // ]
 
   calculateInterestSummary(): number {
-    return this.accounts.reduce((acc, account) => acc + account.interestDollar, 0);
+    // return this.accounts.reduce((acc, account) => acc + account.interestDollar, 0);
+    return 10
   }
 
   hasInterestIncomeEmerald(): boolean {

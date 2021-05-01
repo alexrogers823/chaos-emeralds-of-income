@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { from, of } from "rxjs";
-import { map, mergeScan, scan, tap } from "rxjs/operators";
+import { map, mergeScan, scan, shareReplay, tap } from "rxjs/operators";
 import { EarnedIncomeService } from "src/app/services/earned-income.service";
 import { Emerald } from "../../shared/emerald.model";
 import { EarnedIncome } from "./interfaces/earned-income.model";
@@ -16,7 +16,8 @@ export class EarnedIncomeComponent implements OnInit {
 
   earnedIncome$ = this.earnedIncomeService.earnedIncome$
     .pipe(
-      tap(job => console.log('job posted', job))
+      tap(job => console.log('job posted', job)),
+      shareReplay(1) //not working. fix this
     );
 
   earnedIncomeTotal$ = this.earnedIncomeService.earnedIncome$

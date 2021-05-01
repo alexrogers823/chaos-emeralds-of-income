@@ -11,6 +11,8 @@ import { EarnedIncomeComponent } from './components/earned-income/earned-income.
 import { EmeraldComponent } from './components/common/emerald-component/emerald-component.component';
 import { InterestIncomeComponent } from './components/interest-income/interest-income.component';
 import { NetWorthComponent } from './components/net-worth/net-worth.component';
+import { EarnedIncomeService } from './services/earned-income.service';
+import { InterestIncomeService } from './services/interest-income.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,10 @@ import { NetWorthComponent } from './components/net-worth/net-worth.component';
       { path: 'interest-income', component: InterestIncomeComponent}
     ])
   ],
-  providers: [],
+  providers: [
+    EarnedIncomeService,
+    InterestIncomeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
