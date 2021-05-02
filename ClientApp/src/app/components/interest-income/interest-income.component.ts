@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { Observable } from "rxjs";
+import { from, Observable } from "rxjs";
+import { mergeScan, scan, shareReplay, tap } from "rxjs/operators";
 import { InterestIncomeService } from "src/app/services/interest-income.service";
 import { Emerald } from "../../shared/emerald.model";
 import { InterestIncome } from "./interfaces/interest-income.model";
@@ -10,6 +11,7 @@ import { InterestIncome } from "./interfaces/interest-income.model";
 })
 export class InterestIncomeComponent {
   private goalInterest:number = 100
+  private totalInterest:number;
   interestIncomeEmerald:Emerald = {
     id: 2,
     title: 'Interest Income',
@@ -26,21 +28,37 @@ export class InterestIncomeComponent {
 
   constructor(private interestIncomeService:InterestIncomeService) {}
 
-  accounts$:Observable<InterestIncome[]> = this.interestIncomeService.interestIncome$;
+  interestIncome$:Observable<InterestIncome[]> = this.interestIncomeService.interestIncome$
 
-  // accounts:InterestIncome[] = [
-  //   { name: 'Account 1', interestPercent: 0.0225, interestDollar: 6},
-  //   { name: 'Account 2', interestPercent: 0.015, interestDollar: 4.5},
-  //   { name: 'Account 3', interestPercent: 0.025, interestDollar: 5},
-  // ]
+  // interestIncomeTotal$:number = this.earnedIncomeService.earnedIncome$
+  //   .pipe(
+  //     mergeScan((acc:number, curr:EarnedIncome[]) => {
+  //       return from(curr)
+  //         .pipe(
+  //           scan((start:number, job:EarnedIncome) => start + job.incomeAmount, 0)
+  //         )
+  //     }, 0),
+  //     tap(output => console.log('total', output))
+  //   );
 
-  calculateInterestSummary(): number {
-    // return this.accounts.reduce((acc, account) => acc + account.interestDollar, 0);
-    return 10
-  }
+  interestIncomeTotal$ = this.interestIncomeService.interestIncome$
+    .pipe(
+      mergeScan((acc:number, curr:InterestIncome[]) => {
+        return from(curr)
+          .pipe(
+            scan((start:number, account:InterestIncome) => start + account.interestDollar, 0)
+          )
+      }, 0),
+      shareReplay(1),
+      tap(output => console.log('total', output))
+    );
 
   hasInterestIncomeEmerald(): boolean {
-    const currentInterest = this.calculateInterestSummary();
-    return currentInterest >= this.goalInterest;
+    this.interestIncomeTotal$.subscribe(total => {
+      this.totalInterest = total;
+      console.log('new total', this.totalInterest);
+    });
+
+    return this.totalInterest >= this.goalInterest;
   }
 }
