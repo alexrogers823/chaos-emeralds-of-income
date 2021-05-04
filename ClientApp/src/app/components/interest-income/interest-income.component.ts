@@ -56,7 +56,6 @@ export class InterestIncomeComponent {
   hasInterestIncomeEmerald(): boolean {
     this.interestIncomeTotal$.subscribe(total => {
       this.totalInterest = total;
-      console.log('new total', this.totalInterest);
     });
 
     return this.totalInterest >= this.goalInterest;

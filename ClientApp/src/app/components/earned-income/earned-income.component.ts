@@ -8,6 +8,7 @@ import { EarnedIncome } from "./interfaces/earned-income.model";
 @Component({
   selector: 'app-earned-income',
   templateUrl: './earned-income.component.html',
+  // templateUrl: './earned-income.edit.component.html',
   styleUrls: ['./earned-income.component.css']
 })
 export class EarnedIncomeComponent implements OnInit {
