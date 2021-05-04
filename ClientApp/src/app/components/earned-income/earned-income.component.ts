@@ -14,6 +14,7 @@ import { EarnedIncome } from "./interfaces/earned-income.model";
 export class EarnedIncomeComponent implements OnInit {
   isEditing:boolean = false;
   private goalIncome:number = 5000;
+  private currentIncome:number;
 
   earnedIncome$ = this.earnedIncomeService.earnedIncome$
     .pipe(
@@ -74,6 +75,10 @@ export class EarnedIncomeComponent implements OnInit {
   }
 
   hasEarnedIncomeEmerald() {
-    return this.earned.currentIncome >= this.goalIncome;
+    this.earnedIncomeTotal$.subscribe(income => {
+      this.currentIncome = income;
+    });
+
+    return this.currentIncome >= this.goalIncome;
   }
 }
