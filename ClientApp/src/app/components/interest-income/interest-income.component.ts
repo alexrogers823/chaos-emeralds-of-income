@@ -7,7 +7,8 @@ import { InterestIncome } from "./interfaces/interest-income.model";
 
 @Component({
   selector: 'interest-income',
-  templateUrl: './interest-income.component.html'
+  // templateUrl: './interest-income.component.html'
+  templateUrl: './interest-income.edit.component.html'
 })
 export class InterestIncomeComponent {
   private goalInterest:number = 100
