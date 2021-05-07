@@ -13,6 +13,7 @@ import { InterestIncomeComponent } from './components/interest-income/interest-i
 import { NetWorthComponent } from './components/net-worth/net-worth.component';
 import { EarnedIncomeService } from './services/earned-income.service';
 import { InterestIncomeService } from './services/interest-income.service';
+import { RoyaltyIncomeComponent } from './components/royalty-income/royalty-income.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InterestIncomeService } from './services/interest-income.service';
     NetWorthComponent,
     EmeraldComponent,
     EarnedIncomeComponent,
-    InterestIncomeComponent
+    InterestIncomeComponent,
+    RoyaltyIncomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,7 +34,8 @@ import { InterestIncomeService } from './services/interest-income.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'net-worth', component: NetWorthComponent },
       { path: 'earned-income', component: EarnedIncomeComponent },
-      { path: 'interest-income', component: InterestIncomeComponent}
+      { path: 'interest-income', component: InterestIncomeComponent},
+      { path: 'royalty-income', component: RoyaltyIncomeComponent}
     ])
   ],
   providers: [
