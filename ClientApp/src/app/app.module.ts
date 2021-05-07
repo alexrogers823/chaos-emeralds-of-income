@@ -14,6 +14,7 @@ import { NetWorthComponent } from './components/net-worth/net-worth.component';
 import { EarnedIncomeService } from './services/earned-income.service';
 import { InterestIncomeService } from './services/interest-income.service';
 import { RoyaltyIncomeComponent } from './components/royalty-income/royalty-income.component';
+import { RoyaltyIncomeService } from './services/royalty-income.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RoyaltyIncomeComponent } from './components/royalty-income/royalty-inco
   ],
   providers: [
     EarnedIncomeService,
-    InterestIncomeService
+    InterestIncomeService,
+    RoyaltyIncomeService
   ],
   bootstrap: [AppComponent]
 })
