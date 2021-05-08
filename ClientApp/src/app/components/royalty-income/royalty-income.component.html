@@ -1,3 +1,14 @@
-<div>
-  <p *ngFor="let royalty of royaltyIncome">{{ royalty.title }}</p>
-</div>
+<emerald-component [emerald]="royaltyIncomeEmerald" [hasEmerald]="false">
+  <table class="table table-striped">
+    <tr>
+      <th>Royalty Source</th>
+      <th>Income</th>
+      <th>Frequency</th>
+    </tr>
+    <tr *ngFor="let royalty of royaltyIncome">
+      <td>{{ royalty.title }}</td>
+      <td>{{ royalty.amount | currency }}</td>
+      <td>{{ royalty.frequency }}</td>
+    </tr>
+  </table>
+</emerald-component>
