@@ -1,0 +1,14 @@
+<emerald-component [emerald]="rentalIncomeEmerald" [hasEmerald]="false">
+  <table class="table table-striped">
+    <tr>
+      <th>Property</th>
+      <th>Mortgage</th>
+      <th>Monthly Rent</th>
+    </tr>
+    <tr *ngFor="let property of rentalIncome">
+      <td>{{ property.property }}</td>
+      <td>{{ property.mortgage }}</td>
+      <td>{{ property.rent }}</td>
+    </tr>
+  </table>
+</emerald-component>

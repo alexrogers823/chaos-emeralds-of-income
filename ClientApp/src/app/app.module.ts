@@ -15,6 +15,8 @@ import { EarnedIncomeService } from './services/earned-income.service';
 import { InterestIncomeService } from './services/interest-income.service';
 import { RoyaltyIncomeComponent } from './components/royalty-income/royalty-income.component';
 import { RoyaltyIncomeService } from './services/royalty-income.service';
+import { RentalIncomeComponent } from './components/rental-income/rental-income.component';
+import { RentalIncomeService } from './services/rental-income.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { RoyaltyIncomeService } from './services/royalty-income.service';
     EmeraldComponent,
     EarnedIncomeComponent,
     InterestIncomeComponent,
-    RoyaltyIncomeComponent
+    RoyaltyIncomeComponent,
+    RentalIncomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,13 +39,15 @@ import { RoyaltyIncomeService } from './services/royalty-income.service';
       { path: 'net-worth', component: NetWorthComponent },
       { path: 'earned-income', component: EarnedIncomeComponent },
       { path: 'interest-income', component: InterestIncomeComponent},
-      { path: 'royalty-income', component: RoyaltyIncomeComponent}
+      { path: 'royalty-income', component: RoyaltyIncomeComponent},
+      { path: 'rental-income', component: RentalIncomeComponent}
     ])
   ],
   providers: [
     EarnedIncomeService,
     InterestIncomeService,
-    RoyaltyIncomeService
+    RoyaltyIncomeService,
+    RentalIncomeService
   ],
   bootstrap: [AppComponent]
 })
