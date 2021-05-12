@@ -17,6 +17,8 @@ import { RoyaltyIncomeComponent } from './components/royalty-income/royalty-inco
 import { RoyaltyIncomeService } from './services/royalty-income.service';
 import { RentalIncomeComponent } from './components/rental-income/rental-income.component';
 import { RentalIncomeService } from './services/rental-income.service';
+import { CapitalGainsService } from './services/capital-gains.service';
+import { CapitalGainsComponent } from './components/capital-gains/capital-gains.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { RentalIncomeService } from './services/rental-income.service';
     EarnedIncomeComponent,
     InterestIncomeComponent,
     RoyaltyIncomeComponent,
-    RentalIncomeComponent
+    RentalIncomeComponent,
+    // CapitalGainsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,16 +41,18 @@ import { RentalIncomeService } from './services/rental-income.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'net-worth', component: NetWorthComponent },
       { path: 'earned-income', component: EarnedIncomeComponent },
-      { path: 'interest-income', component: InterestIncomeComponent},
-      { path: 'royalty-income', component: RoyaltyIncomeComponent},
-      { path: 'rental-income', component: RentalIncomeComponent}
+      { path: 'interest-income', component: InterestIncomeComponent },
+      { path: 'royalty-income', component: RoyaltyIncomeComponent },
+      { path: 'rental-income', component: RentalIncomeComponent },
+      // { path: 'capital-gains', component: CapitalGainsComponent }
     ])
   ],
   providers: [
     EarnedIncomeService,
     InterestIncomeService,
     RoyaltyIncomeService,
-    RentalIncomeService
+    RentalIncomeService,
+    CapitalGainsService
   ],
   bootstrap: [AppComponent]
 })
