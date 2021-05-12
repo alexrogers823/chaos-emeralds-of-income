@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CapitalGains } from "../components/capital-gains/interfaces/capital-gains.model";
 
-Injectable()
+@Injectable()
 export class CapitalGainsService {
   getCapitalGains() {
     return capitalGains_sample;

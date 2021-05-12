@@ -26,12 +26,12 @@ import { CapitalGainsComponent } from './components/capital-gains/capital-gains.
     NavMenuComponent,
     HomeComponent,
     NetWorthComponent,
+    // CapitalGainsComponent,
     EmeraldComponent,
     EarnedIncomeComponent,
     InterestIncomeComponent,
     RoyaltyIncomeComponent,
     RentalIncomeComponent,
-    // CapitalGainsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,7 +44,7 @@ import { CapitalGainsComponent } from './components/capital-gains/capital-gains.
       { path: 'interest-income', component: InterestIncomeComponent },
       { path: 'royalty-income', component: RoyaltyIncomeComponent },
       { path: 'rental-income', component: RentalIncomeComponent },
-      // { path: 'capital-gains', component: CapitalGainsComponent }
+      { path: 'capital-gains', component: CapitalGainsComponent }
     ])
   ],
   providers: [
