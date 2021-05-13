@@ -19,6 +19,7 @@ import { RentalIncomeComponent } from './components/rental-income/rental-income.
 import { RentalIncomeService } from './services/rental-income.service';
 import { CapitalGainsService } from './services/capital-gains.service';
 import { CapitalGainsComponent } from './components/capital-gains/capital-gains.component';
+import { DividendIncomeComponent } from './components/dividend-income/dividend-income.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CapitalGainsComponent } from './components/capital-gains/capital-gains.
     InterestIncomeComponent,
     RoyaltyIncomeComponent,
     RentalIncomeComponent,
+    DividendIncomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -44,7 +46,8 @@ import { CapitalGainsComponent } from './components/capital-gains/capital-gains.
       { path: 'interest-income', component: InterestIncomeComponent },
       { path: 'royalty-income', component: RoyaltyIncomeComponent },
       { path: 'rental-income', component: RentalIncomeComponent },
-      { path: 'capital-gains', component: CapitalGainsComponent }
+      { path: 'capital-gains', component: CapitalGainsComponent },
+      { path: 'dividend-income', component: DividendIncomeComponent }
     ])
   ],
   providers: [
