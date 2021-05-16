@@ -3,7 +3,8 @@ import { Emerald } from "src/app/shared/emerald.model";
 
 @Component({
   selector: 'emerald-component',
-  templateUrl: './emerald-component.component.html'
+  templateUrl: './emerald-component.component.html',
+  styleUrls: ['./emerald-component.component.css']
 })
 export class EmeraldComponent {
   @Input() emerald:Emerald;
