@@ -16,7 +16,7 @@ export class RentalIncomeComponent implements OnInit {
     quote: "'Test Quote'",
     author: "'Test Author'",
     goal: "30% net income from rental properties",
-    emeraldImageUrl: 'www.fake.com',
+    emeraldImageUrl: 'assets/lightblue-emerald.png',
     resources: [
       'resource 10',
       'resource 11',

@@ -12,7 +12,7 @@ export class DividendIncomeComponent {
     quote: 'test quote',
     author: 'test author',
     goal: '$1000/mo from dividends',
-    emeraldImageUrl: 'www.comingsoon.com',
+    emeraldImageUrl: 'assets/blue-emerald.png',
     resources: [
       'resource 13',
       'resource 14',

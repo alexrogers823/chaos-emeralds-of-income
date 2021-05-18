@@ -41,7 +41,7 @@ export class EarnedIncomeComponent implements OnInit {
     quote: '"When you work on something that only has the capacity to make you 5 dollars, it does not matter how much harder you work – the most you will make is 5 dollars."',
     author: 'Idowu Koyenikan',
     goal: this.goalIncome.toString(),
-    emeraldImageUrl: 'placeholder-emerald.jpg',
+    emeraldImageUrl: 'assets/green-emerald.png',
     resources: [
       'resource 1',
       'resource 2',

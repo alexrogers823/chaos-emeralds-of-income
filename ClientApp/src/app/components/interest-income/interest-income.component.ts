@@ -19,7 +19,7 @@ export class InterestIncomeComponent {
     quote: '"It all comes down to interest rates. As an investor, all you\'re doing is putting up a lump-sum payment for a future cash flow."',
     author: 'Ray Dalio',
     goal: `\$${this.goalInterest}/mo in interest`,
-    emeraldImageUrl: 'fake.com',
+    emeraldImageUrl: 'assets/purple-emerald.png',
     resources: [
       'resource 4',
       'resource 5',

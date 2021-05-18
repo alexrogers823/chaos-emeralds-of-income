@@ -15,7 +15,7 @@ export class RoyaltyIncomeComponent implements OnInit {
     quote: "'Test Quote'",
     author: "'Test Author'",
     goal: "Coming soon",
-    emeraldImageUrl: 'www.fake.com',
+    emeraldImageUrl: 'assets/white-emerald.png',
     resources: [
       'resource 7',
       'resource 8',

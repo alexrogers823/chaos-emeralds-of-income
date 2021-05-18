@@ -12,7 +12,7 @@ export class BusinessIncomeComponent {
 		quote: 'Test quote',
 		author: 'test author',
 		goal: '$10000 annual net profit',
-		emeraldImageUrl: 'business.com',
+		emeraldImageUrl: 'assets/red-emerald.png',
 		resources: [
 			'resource 16',
 			'resource 17',

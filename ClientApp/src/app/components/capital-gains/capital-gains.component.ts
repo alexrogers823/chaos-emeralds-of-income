@@ -12,7 +12,7 @@ export class CapitalGainsComponent {
     quote: 'Test Quote',
     author: 'Test Author',
     goal: '30% increase in share value on average',
-    emeraldImageUrl: 'capitalgains.com',
+    emeraldImageUrl: 'assets/yellow-emerald.png',
     resources: [
       'resource 19',
       'resource 20',
