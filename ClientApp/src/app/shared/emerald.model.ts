@@ -5,5 +5,10 @@ export interface Emerald {
   author:string
   goal:string
   emeraldImageUrl:string
-  resources:string[]
+  resources:Resource[]
+}
+
+interface Resource {
+  name:string
+  link?:string
 }

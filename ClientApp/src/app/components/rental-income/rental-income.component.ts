@@ -18,9 +18,9 @@ export class RentalIncomeComponent implements OnInit {
     goal: "30% net income from rental properties",
     emeraldImageUrl: 'assets/lightblue-emerald.png',
     resources: [
-      'resource 10',
-      'resource 11',
-      'resource 12'
+      {name: 'resource 10'},
+      {name: 'resource 11'},
+      {name: 'resource 12'}
     ]
   }
 

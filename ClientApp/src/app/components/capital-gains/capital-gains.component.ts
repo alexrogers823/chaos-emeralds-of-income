@@ -14,9 +14,9 @@ export class CapitalGainsComponent {
     goal: '30% increase in share value on average',
     emeraldImageUrl: 'assets/yellow-emerald.png',
     resources: [
-      'resource 19',
-      'resource 20',
-      'resource 21'
+      {name: 'resource 19'},
+      {name: 'resource 20'},
+      {name: 'resource 21'}
     ]
   }
 }

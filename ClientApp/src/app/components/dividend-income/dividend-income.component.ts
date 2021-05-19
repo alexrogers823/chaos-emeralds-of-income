@@ -14,9 +14,9 @@ export class DividendIncomeComponent {
     goal: '$1000/mo from dividends',
     emeraldImageUrl: 'assets/blue-emerald.png',
     resources: [
-      'resource 13',
-      'resource 14',
-      'resource 15'
+      {name: 'resource 13'},
+      {name: 'resource 14'},
+      {name: 'resource 15'}
     ]
   }
 }

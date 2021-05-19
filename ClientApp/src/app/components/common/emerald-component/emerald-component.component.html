@@ -11,7 +11,7 @@
   <ng-content></ng-content>
   <div class="helpful-resources">
     <p>Helpful resources</p>
-    <div *ngFor="let resource of emerald.resources">
+    <div *ngFor="let resource of emerald.resources?.name">
       <p>{{ resource }}</p>
     </div>
   </div>

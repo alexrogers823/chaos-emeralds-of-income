@@ -21,9 +21,9 @@ export class InterestIncomeComponent {
     goal: `\$${this.goalInterest}/mo in interest`,
     emeraldImageUrl: 'assets/purple-emerald.png',
     resources: [
-      'resource 4',
-      'resource 5',
-      'resource 6'
+      {name: 'resource 4'},
+      {name: 'resource 5'},
+      {name: 'resource 6'}
     ]
   }
 

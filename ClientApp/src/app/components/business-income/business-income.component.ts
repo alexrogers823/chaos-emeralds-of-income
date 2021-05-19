@@ -14,9 +14,9 @@ export class BusinessIncomeComponent {
 		goal: '$10000 annual net profit',
 		emeraldImageUrl: 'assets/red-emerald.png',
 		resources: [
-			'resource 16',
-			'resource 17',
-			'resource 18',
+			{name: 'resource 16'},
+			{name: 'resource 17'},
+			{name: 'resource 18'}
 		]
 	}
 };

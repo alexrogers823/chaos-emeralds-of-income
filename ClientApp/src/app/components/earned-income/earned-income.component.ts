@@ -43,9 +43,9 @@ export class EarnedIncomeComponent implements OnInit {
     goal: this.goalIncome.toString(),
     emeraldImageUrl: 'assets/green-emerald.png',
     resources: [
-      'resource 1',
-      'resource 2',
-      'resource 3'
+      {name: 'resource 1'},
+      {name: 'resource 2'},
+      {name: 'resource 3'}
     ]
   };
 

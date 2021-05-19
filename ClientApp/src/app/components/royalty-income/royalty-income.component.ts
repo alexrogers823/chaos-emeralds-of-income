@@ -17,9 +17,9 @@ export class RoyaltyIncomeComponent implements OnInit {
     goal: "Coming soon",
     emeraldImageUrl: 'assets/white-emerald.png',
     resources: [
-      'resource 7',
-      'resource 8',
-      'resource 9'
+      {name: 'resource 7'},
+      {name: 'resource 8'},
+      {name: 'resource 9'}
     ]
   }
 
