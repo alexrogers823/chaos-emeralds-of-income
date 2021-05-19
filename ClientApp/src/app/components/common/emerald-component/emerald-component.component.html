@@ -1,16 +1,18 @@
-<h1>{{ emerald.title }}</h1>
-<p>{{ emerald.quote }} - {{ emerald.author }}</p>
-<span>Goal to collecting emerald: </span>
-<span>{{ emerald.goal }}</span>
-<!-- <span *ngIf="hasEmerald; else noEmerald">{{ emerald.emeraldImageUrl }}</span> -->
-<img *ngIf="hasEmerald; else noEmerald" [src]="emerald.emeraldImageUrl" />
-<ng-template #noEmerald>
-  <img src="assets/blank-emerald.png" alt="blank emerald" />
-</ng-template>
-<ng-content></ng-content>
-<div class="helpful-resources">
-  <p>Helpful resources</p>
-  <div *ngFor="let resource of emerald.resources">
-    <p>{{ resource }}</p>
+<div>
+  <h1>{{ emerald.title }}</h1>
+  <p>{{ emerald.quote }} - {{ emerald.author }}</p>
+  <span>Goal to collecting emerald: </span>
+  <span>{{ emerald.goal }}</span>
+  <!-- <span *ngIf="hasEmerald; else noEmerald">{{ emerald.emeraldImageUrl }}</span> -->
+  <img *ngIf="hasEmerald; else noEmerald" class="img-goal-size" [src]="emerald.emeraldImageUrl" />
+  <ng-template #noEmerald>
+    <img class="img-goal-size" src="assets/blank-emerald.png" alt="blank emerald" />
+  </ng-template>
+  <ng-content></ng-content>
+  <div class="helpful-resources">
+    <p>Helpful resources</p>
+    <div *ngFor="let resource of emerald.resources">
+      <p>{{ resource }}</p>
+    </div>
   </div>
 </div>
