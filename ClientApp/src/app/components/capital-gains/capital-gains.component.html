@@ -1,3 +1,16 @@
 <emerald-component [emerald]="capitalGainsEmerald" [hasEmerald]="false">
-  <p>Test</p>
+  <table class="table table-striped" *ngIf="capitalGains">
+    <tr>
+      <th>Investment</th>
+      <th>Value</th>
+    </tr>
+    <tr *ngFor="let investment of capitalGains">
+      <td>{{ investment.investment }}</td>
+      <td>{{ investment.value }}</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>total here</td>
+    </tr>
+  </table>
 </emerald-component>

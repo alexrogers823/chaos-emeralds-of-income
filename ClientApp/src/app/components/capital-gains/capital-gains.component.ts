@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CapitalGainsService } from "src/app/services/capital-gains.service";
 import { Emerald } from "src/app/shared/emerald.model";
 
 @Component({
@@ -19,4 +20,10 @@ export class CapitalGainsComponent {
       {name: 'resource 21'}
     ]
   }
+
+  constructor(private capitalGainsService:CapitalGainsService) {}
+
+  capitalGains = this.capitalGainsService.getCapitalGains()
+
+  
 }
