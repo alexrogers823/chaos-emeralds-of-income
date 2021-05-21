@@ -46,6 +46,10 @@ export class EarnedIncomeComponent implements OnInit {
       {name: 'resource 1'},
       {name: 'resource 2'},
       {name: 'resource 3'}
+    ],
+    notes: [
+      'test note 1',
+      'test note 2'
     ]
   };
 

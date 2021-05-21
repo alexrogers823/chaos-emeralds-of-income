@@ -6,6 +6,7 @@ export interface Emerald {
   goal:string
   emeraldImageUrl:string
   resources:Resource[]
+  notes?:string[]
 }
 
 interface Resource {

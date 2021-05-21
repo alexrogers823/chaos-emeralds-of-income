@@ -11,8 +11,14 @@
   <ng-content></ng-content>
   <div class="helpful-resources">
     <p>Helpful resources</p>
-    <div *ngFor="let resource of emerald.resources?.name">
-      <p>{{ resource }}</p>
+    <div *ngFor="let resource of emerald.resources">
+      <p>{{ resource.name }}</p>
     </div>
+  </div>
+  <div class="notes" *ngIf="emerald.notes">
+    <p>Notes for {{ emerald.title }}</p>
+    <ul *ngFor="let note of emerald.notes">
+      <li>{{ note }}</li>
+    </ul>
   </div>
 </div>
