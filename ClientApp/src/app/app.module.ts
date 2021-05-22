@@ -21,10 +21,12 @@ import { CapitalGainsService } from './services/capital-gains.service';
 import { DividendIncomeComponent } from './components/dividend-income/dividend-income.component';
 import { BusinessIncomeComponent } from './components/business-income/business-income.component';
 import { CapitalGainsComponent } from './components/capital-gains/capital-gains.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainPageComponent,
     NavMenuComponent,
     HomeComponent,
     NetWorthComponent,
@@ -43,6 +45,7 @@ import { CapitalGainsComponent } from './components/capital-gains/capital-gains.
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'welcome', component: MainPageComponent },
       { path: 'net-worth', component: NetWorthComponent },
       { path: 'earned-income', component: EarnedIncomeComponent },
       { path: 'interest-income', component: InterestIncomeComponent },
