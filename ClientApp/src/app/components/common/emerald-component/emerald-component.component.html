@@ -9,16 +9,23 @@
     <img class="img-goal-size" src="assets/blank-emerald.png" alt="blank emerald" />
   </ng-template>
   <ng-content></ng-content>
-  <div class="helpful-resources">
-    <p>Helpful resources</p>
-    <div *ngFor="let resource of emerald.resources">
-      <p>{{ resource.name }}</p>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Helpful resources</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let resource of emerald.resources">{{ resource.name }}</li>
+      </ul>
     </div>
   </div>
-  <div class="notes" *ngIf="emerald.notes">
-    <p>Notes for {{ emerald.title }}</p>
-    <ul *ngFor="let note of emerald.notes">
-      <li>{{ note }}</li>
-    </ul>
+  <br />
+  <div class="card" *ngIf="emerald.notes">
+    <div class="card-header text-muted">
+      Notes for {{ emerald.title }}
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-light" *ngFor="let note of emerald.notes">{{ note }}</li>
+      </ul>
+    </div>
   </div>
 </div>

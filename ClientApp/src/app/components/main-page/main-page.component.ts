@@ -1,5 +1,13 @@
 import { Component } from "@angular/core";
-import { businessIncomeLink, capitalGainsLink, dividendIncomeLink, earnedIncomeLink, interestIncomeLink, rentalIncomeLink, royaltyIncomeLink } from "src/app/urls";
+import { 
+  businessIncomeLink, 
+  capitalGainsLink, 
+  dividendIncomeLink, 
+  earnedIncomeLink, 
+  interestIncomeLink, 
+  rentalIncomeLink, 
+  royaltyIncomeLink 
+} from "src/app/urls";
 
 @Component({
   selector: 'main',
