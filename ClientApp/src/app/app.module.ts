@@ -23,6 +23,18 @@ import { BusinessIncomeComponent } from './components/business-income/business-i
 import { CapitalGainsComponent } from './components/capital-gains/capital-gains.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 
+import {
+  businessIncomeLink,
+  capitalGainsLink,
+  dividendIncomeLink,
+  earnedIncomeLink,
+  interestIncomeLink,
+  mainPageLink, 
+  netWorthLink, 
+  rentalIncomeLink, 
+  royaltyIncomeLink
+} from './urls';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,15 +57,15 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'welcome', component: MainPageComponent },
-      { path: 'net-worth', component: NetWorthComponent },
-      { path: 'earned-income', component: EarnedIncomeComponent },
-      { path: 'interest-income', component: InterestIncomeComponent },
-      { path: 'royalty-income', component: RoyaltyIncomeComponent },
-      { path: 'rental-income', component: RentalIncomeComponent },
-      { path: 'dividend-income', component: DividendIncomeComponent },
-      { path: 'business-income', component: BusinessIncomeComponent },
-      { path: 'capital-gains', component: CapitalGainsComponent }
+      { path: mainPageLink, component: MainPageComponent },
+      { path: netWorthLink, component: NetWorthComponent },
+      { path: earnedIncomeLink, component: EarnedIncomeComponent },
+      { path: interestIncomeLink, component: InterestIncomeComponent },
+      { path: royaltyIncomeLink, component: RoyaltyIncomeComponent },
+      { path: rentalIncomeLink, component: RentalIncomeComponent },
+      { path: dividendIncomeLink, component: DividendIncomeComponent },
+      { path: businessIncomeLink, component: BusinessIncomeComponent },
+      { path: capitalGainsLink, component: CapitalGainsComponent }
     ])
   ],
   providers: [

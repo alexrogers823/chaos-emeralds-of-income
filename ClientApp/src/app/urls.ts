@@ -1,0 +1,9 @@
+export const mainPageLink = 'welcome';
+export const netWorthLink = 'net-worth';
+export const earnedIncomeLink = 'earned-income';
+export const interestIncomeLink = 'interest-income';
+export const royaltyIncomeLink = 'royalty-income';
+export const rentalIncomeLink = 'rental-income';
+export const dividendIncomeLink = 'dividend-income';
+export const businessIncomeLink = 'business-income';
+export const capitalGainsLink = 'capital-gains';
