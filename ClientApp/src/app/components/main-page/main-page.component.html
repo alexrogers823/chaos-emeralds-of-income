@@ -2,5 +2,5 @@
 <p>Welcome!</p>
 <p>Choose emerald to see information and find out how to collect it</p>
 <div class="emerald" *ngFor="let emerald of allEmeralds">
-  <img class="emerald-image" [src]="emerald.imageLink" [routerLink]="['/royalty-income']" />
+  <img class="emerald-image" [src]="emerald.imageLink" [routerLink]="[emerald.pageLink]" />
 </div>
