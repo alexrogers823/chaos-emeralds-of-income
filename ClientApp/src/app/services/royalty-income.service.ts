@@ -1,14 +1,17 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { of } from "rxjs";
 import { RoyaltyIncome } from "../components/royalty-income/interfaces/royalty-income.model";
 
 @Injectable()
 export class RoyaltyIncomeService {
   constructor(private http: HttpClient) {}
 
-  getRoyaltyIncome() {
-    return royaltyIncome_sample;
-  }
+  // getRoyaltyIncome() {
+  //   return royaltyIncome_sample;
+  // }
+
+  royaltyIncome$ = of(royaltyIncome_sample);
 }
 
 const royaltyIncome_sample:RoyaltyIncome[] = [

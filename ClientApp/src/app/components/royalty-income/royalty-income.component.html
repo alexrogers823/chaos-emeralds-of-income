@@ -1,14 +1,19 @@
-<emerald-component [emerald]="royaltyIncomeEmerald" [hasEmerald]="false">
+<emerald-component [emerald]="royaltyIncomeEmerald" [hasEmerald]="hasRoyaltyIncomeEmerald()">
   <table class="table table-striped">
     <tr>
       <th>Royalty Source</th>
       <th>Income</th>
       <th>Frequency</th>
     </tr>
-    <tr *ngFor="let royalty of royaltyIncome">
+    <tr *ngFor="let royalty of royaltyIncome$ | async">
       <td>{{ royalty.title }}</td>
       <td>{{ royalty.amount | currency }}</td>
       <td>{{ royalty.frequency }}</td>
+    </tr>
+    <tr *ngIf="royaltyIncomeTotal$ | async as royaltyIncomeTotal">
+      <td>Total Royalites:</td>
+      <td>{{ royaltyIncomeTotal | currency }}</td>
+      <td></td>
     </tr>
   </table>
 </emerald-component>
