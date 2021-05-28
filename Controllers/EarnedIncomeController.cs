@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace ChaosEmeraldsOfIncome.Controllers
 {
     [ApiController]
-    [Route("[EarnedIncome]")]
+    [Route("api/earnedIncome")]
     public class EarnedIncomeController : ControllerBase
     {
-        public EarnedIncomeController(IEarnedIncomeRepo repo)
+        private readonly MockEarnedIncomeRepo _repo = new MockEarnedIncomeRepo();
+
+        public EarnedIncomeController(MockEarnedIncomeRepo repo)
         {
             _repo = repo;
         }

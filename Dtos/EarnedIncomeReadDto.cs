@@ -1,3 +1,5 @@
+using System;
+
 namespace ChaosEmeraldsOfIncome.Controllers
 {
     public class EarnedIncomeReadDto
