@@ -1,21 +1,25 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { from, of } from "rxjs";
+import { from, Observable, of } from "rxjs";
+import { tap } from "rxjs/operators";
 import { EarnedIncome } from "../components/earned-income/interfaces/earned-income.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EarnedIncomeService {
-  _baseUrl: string = "api/EarnedIncome";
+  _baseUrl:string = "api/EarnedIncome";
 
   constructor(private http: HttpClient) {
 
   }
 
-  // getEarnedIncome() {
-  //   return this.http.get<EarnedIncome[]>(`${this._baseUrl}/GetEarnedIncome`);
-  // }
+  getEarnedIncome():Observable<EarnedIncome[]> {
+    return this.http.get<EarnedIncome[]>(this._baseUrl)
+      .pipe(
+        tap(obj => console.log('fetched earned income', obj))
+      );
+  }
 
   earnedIncome$ = of(earnedIncome_sample);
 

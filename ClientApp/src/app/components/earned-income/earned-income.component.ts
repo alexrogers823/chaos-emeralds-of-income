@@ -17,13 +17,15 @@ export class EarnedIncomeComponent implements OnInit {
   private goalIncome:number = 5000;
   private currentIncome:number;
 
-  earnedIncome$ = this.earnedIncomeService.earnedIncome$
-    .pipe(
-      tap(job => console.log('job posted', job)),
-      shareReplay(1) //not working. fix this
-    );
+  // earnedIncome$ = this.earnedIncomeService.earnedIncome$
+  //   .pipe(
+  //     tap(job => console.log('job posted', job)),
+  //     shareReplay(1) //not working. fix this
+  //   );
 
-  earnedIncomeTotal$ = this.earnedIncomeService.earnedIncome$
+  earnedIncome$ = this.earnedIncomeService.getEarnedIncome();
+
+  earnedIncomeTotal$ = this.earnedIncomeService.getEarnedIncome()
     .pipe(
       mergeScan((acc:number, curr:EarnedIncome[]) => {
         return from(curr)
