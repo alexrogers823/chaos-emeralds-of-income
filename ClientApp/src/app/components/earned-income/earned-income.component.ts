@@ -23,9 +23,9 @@ export class EarnedIncomeComponent implements OnInit {
   //     shareReplay(1) //not working. fix this
   //   );
 
-  earnedIncome$ = this.earnedIncomeService.getEarnedIncome();
+  earnedIncome$ = this.earnedIncomeService.earnedIncome$
 
-  earnedIncomeTotal$ = this.earnedIncomeService.getEarnedIncome()
+  earnedIncomeTotal$ = this.earnedIncomeService.earnedIncome$
     .pipe(
       mergeScan((acc:number, curr:EarnedIncome[]) => {
         return from(curr)
@@ -58,9 +58,9 @@ export class EarnedIncomeComponent implements OnInit {
   constructor(private earnedIncomeService: EarnedIncomeService) { }
 
   ngOnInit() {
-    // this.service.getEarnedIncome().subscribe(data => {
-    //   this.jobs = data;
-    // })
+    this.earnedIncomeTotal$.subscribe(income => {
+      this.currentIncome = income;
+    });
   }
 
   earned = {
@@ -82,10 +82,6 @@ export class EarnedIncomeComponent implements OnInit {
   }
 
   hasEarnedIncomeEmerald() {
-    this.earnedIncomeTotal$.subscribe(income => {
-      this.currentIncome = income;
-    });
-
     return this.currentIncome >= this.goalIncome;
   }
 }

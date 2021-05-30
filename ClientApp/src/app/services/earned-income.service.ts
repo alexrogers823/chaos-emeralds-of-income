@@ -14,14 +14,12 @@ export class EarnedIncomeService {
 
   }
 
-  getEarnedIncome():Observable<EarnedIncome[]> {
-    return this.http.get<EarnedIncome[]>(this._baseUrl)
-      .pipe(
-        tap(obj => console.log('fetched earned income', obj))
-      );
-  }
+  earnedIncome$:Observable<EarnedIncome[]> = this.http.get<EarnedIncome[]>(this._baseUrl)
+    .pipe(
+      tap(obj => console.log('fetched earned income', obj))
+    );
 
-  earnedIncome$ = of(earnedIncome_sample);
+  // earnedIncome$ = of(earnedIncome_sample);
 
 }
 
