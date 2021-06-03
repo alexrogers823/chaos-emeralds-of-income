@@ -1,15 +1,21 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { of } from "rxjs";
+import { Observable, of } from "rxjs";
+import { tap } from "rxjs/operators";
 import { InterestIncome } from "../components/interest-income/interfaces/interest-income.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class InterestIncomeService {
+  _baseUrl = 'api/InterestIncome';
+
   constructor(private http: HttpClient) {}
 
-  interestIncome$ = of(interestIncome_sample);
+  interestIncome$:Observable<InterestIncome[]> = this.http.get<InterestIncome[]>(this._baseUrl)
+    .pipe(
+      tap(obj => console.log('fetching interest income...', obj))
+    )
 }
 
 const interestIncome_sample:InterestIncome[] = [
