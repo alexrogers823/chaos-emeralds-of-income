@@ -6,8 +6,8 @@ namespace ChaosEmeraldsOfIncome.Controllers
     {
         public int UserId { get; set; }
         public string Name { get; set; }
-        public int InterestPercent { get; set; }
-        public int InterestDollar { get; set; }
-        public DateTime DateAdded { get; set; }
+        public double InterestPercent { get; set; }
+        public double InterestDollar { get; set; }
+        public DateTime? DateAdded { get; set; }
     }
 }
