@@ -17,7 +17,7 @@ export class CapitalGainsService {
 }
 
 const capitalGains_sample:CapitalGains[] = [
-  { investment: 'QQQ', value: 1000 },
-  { investment: 'MSFT', value: 250 },
-  { investment: 'SPGRX', value: 325 }
+  { investment: 'QQQ', currentValue: 1000 },
+  { investment: 'MSFT', currentValue: 250 },
+  { investment: 'SPGRX', currentValue: 325 }
 ]

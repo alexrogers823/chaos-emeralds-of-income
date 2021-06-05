@@ -9,6 +9,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public int IncomeAmount { get; set; }
         public string Frequency { get; set; }
         public bool IsCurrent { get; set; }
-        public DateTime? LastEdited { get; set; }
+        public DateTime? LastUpdated { get; set; }
     }
 }

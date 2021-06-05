@@ -1,4 +1,4 @@
 export interface CapitalGains {
   investment:string
-  value:number
+  currentValue:number
 }
