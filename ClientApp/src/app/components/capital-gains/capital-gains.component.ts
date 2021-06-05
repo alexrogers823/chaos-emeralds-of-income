@@ -10,8 +10,8 @@ export class CapitalGainsComponent {
   capitalGainsEmerald:Emerald = {
     id: 5,
     title: 'Capital Gains',
-    quote: 'Test Quote',
-    author: 'Test Author',
+    quote: '"One basic myth is that rich people get wealthy by earning income. But that\'s not how most get rich. Most of the gains of the rich people since 1945 have been capital gains"',
+    author: 'Michael Hudson',
     goal: '30% increase in share value on average',
     emeraldImageUrl: 'assets/yellow-emerald.png',
     resources: [
@@ -23,7 +23,6 @@ export class CapitalGainsComponent {
 
   constructor(private capitalGainsService:CapitalGainsService) {}
 
-  capitalGains = this.capitalGainsService.getCapitalGains()
-
+  capitalGains$ = this.capitalGainsService.capitalGains$;
   
 }

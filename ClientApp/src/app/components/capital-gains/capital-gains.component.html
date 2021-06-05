@@ -1,12 +1,12 @@
 <emerald-component [emerald]="capitalGainsEmerald" [hasEmerald]="false">
-  <table class="table table-striped" *ngIf="capitalGains">
+  <table class="table table-striped" *ngIf="capitalGains$ | async as capitalGains">
     <tr>
       <th>Investment</th>
       <th>Value</th>
     </tr>
     <tr *ngFor="let investment of capitalGains">
       <td>{{ investment.investment }}</td>
-      <td>{{ investment.value }}</td>
+      <td>{{ investment.value | currency }}</td>
     </tr>
     <tr>
       <td>Total</td>
