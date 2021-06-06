@@ -6,11 +6,11 @@
     </tr>
     <tr *ngFor="let investment of capitalGains">
       <td>{{ investment.investment }}</td>
-      <td>{{ investment.value | currency }}</td>
+      <td>{{ investment.currentValue | currency }}</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>total here</td>
+      <td>{{ totalInvestmentValue | currency }}</td>
     </tr>
   </table>
 </emerald-component>

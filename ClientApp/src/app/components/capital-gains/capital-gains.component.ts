@@ -1,12 +1,16 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { from } from "rxjs";
+import { mergeScan, scan } from "rxjs/operators";
 import { CapitalGainsService } from "src/app/services/capital-gains.service";
 import { Emerald } from "src/app/shared/emerald.model";
+import { CapitalGains } from "./interfaces/capital-gains.model";
 
 @Component({
   selector: 'capital-gains',
   templateUrl: './capital-gains.component.html'
 })
-export class CapitalGainsComponent {
+export class CapitalGainsComponent implements OnInit {
+  private totalInvestmentValue:number;
   capitalGainsEmerald:Emerald = {
     id: 5,
     title: 'Capital Gains',
@@ -23,6 +27,22 @@ export class CapitalGainsComponent {
 
   constructor(private capitalGainsService:CapitalGainsService) {}
 
+  ngOnInit() {
+    this.capitalGainsTotal$.subscribe(value => {
+      this.totalInvestmentValue = value;
+    });
+  }
+
   capitalGains$ = this.capitalGainsService.capitalGains$;
+
+  capitalGainsTotal$ = this.capitalGainsService.capitalGains$
+    .pipe(
+      mergeScan((acc:number, curr:CapitalGains[]) => {
+        return from(curr)
+          .pipe(
+            scan((start:number, investment:CapitalGains) => start + investment.currentValue, 0)
+          )
+      }, 0)
+    );
   
 }
