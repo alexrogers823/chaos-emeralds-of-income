@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { from, Observable } from "rxjs";
 import { mergeScan, scan, shareReplay, tap } from "rxjs/operators";
 import { InterestIncomeService } from "src/app/services/interest-income.service";
@@ -10,7 +10,7 @@ import { InterestIncome } from "./interfaces/interest-income.model";
   templateUrl: './interest-income.component.html'
   // templateUrl: './interest-income.edit.component.html'
 })
-export class InterestIncomeComponent {
+export class InterestIncomeComponent implements OnInit {
   private goalInterest:number = 100
   private totalInterest:number;
   interestIncomeEmerald:Emerald = {
@@ -28,6 +28,12 @@ export class InterestIncomeComponent {
   }
 
   constructor(private interestIncomeService:InterestIncomeService) {}
+
+  ngOnInit() {
+    this.interestIncomeTotal$.subscribe(total => {
+      this.totalInterest = total;
+    })
+  }
 
   interestIncome$:Observable<InterestIncome[]> = this.interestIncomeService.interestIncome$
 
@@ -55,10 +61,6 @@ export class InterestIncomeComponent {
     );
 
   hasInterestIncomeEmerald(): boolean {
-    this.interestIncomeTotal$.subscribe(total => {
-      this.totalInterest = total;
-    });
-
     return this.totalInterest >= this.goalInterest;
   }
 }
