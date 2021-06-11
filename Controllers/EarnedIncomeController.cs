@@ -23,5 +23,13 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
             return Ok(earnedIncome);
         }
+
+        // [HttpPost]
+        // public ActionResult<EarnedIncome> InsertEarnedIncome()
+        // {
+        //     var newIncome = _repo.InsertEarnedIncome();
+
+        //     return CreatedAtRoute(newIncome);
+        // }
     }
 }

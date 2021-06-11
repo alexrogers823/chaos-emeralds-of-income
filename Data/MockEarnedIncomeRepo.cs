@@ -15,5 +15,10 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
             return earnedIncome;
         }
+
+        public EarnedIncome InsertEarnedIncome(EarnedIncome income)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
