@@ -25,20 +25,22 @@
   </table>
 
   <br />
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Add Job" aria-label="job" />
-    <input type="text" class="form-control" placeholder="Add Income" aria-label="job" />
-    <select id="incomeFrequency" class="custom-select">
-      <option value="annually" selected>Annually</option>
-      <option value="semiAnnually">Semi-Annually</option>
-      <option value="quarterly">Quarterly</option>
-      <option value="monthly">Monthly</option>
-      <option value="weekly">Weekly</option>
-    </select>
-    <div class="input-group-append">
-      <button class="btn btn-success" type="button">Add Earned Income</button>
+  <form #earnedIncome="ngForm" (ngSubmit)="addEarnedIncome(earnedIncome)">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Add Job" aria-label="job" name="job" ngModel #job="ngModel" />
+      <input type="text" class="form-control" placeholder="Add Income" aria-label="income" name="income" ngModel #income="ngModel" />
+      <select id="incomeFrequency" name="incomeFrequency" class="form-control" ngModel #frequency="ngModel">
+        <option value="annually" selected>Annually</option>
+        <option value="semiAnnually">Semi-Annually</option>
+        <option value="quarterly">Quarterly</option>
+        <option value="monthly">Monthly</option>
+        <option value="weekly">Weekly</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-success">Add Earned Income</button>
+      </div>
     </div>
-  </div>
+  </form>
   <br />
 
 </emerald-component>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, NgForm } from "@angular/forms";
 import { from, of } from "rxjs";
 import { map, mergeScan, scan, shareReplay, tap } from "rxjs/operators";
 import { EarnedIncomeService } from "src/app/services/earned-income.service";
@@ -83,5 +83,9 @@ export class EarnedIncomeComponent implements OnInit {
 
   hasEarnedIncomeEmerald() {
     return this.currentIncome >= this.goalIncome;
+  }
+
+  addEarnedIncome(earnedIncome: NgForm) {
+    console.log('clicked', earnedIncome.value)
   }
 }
