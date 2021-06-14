@@ -19,6 +19,11 @@ export class EarnedIncomeService {
       tap(obj => console.log('fetched earned income', obj))
     );
 
+  addEarnedIncome(incomeObj:EarnedIncome) {
+    console.log('added earned income!');
+    console.log('values', incomeObj);
+  }
+
   // earnedIncome$ = of(earnedIncome_sample);
 
 }
