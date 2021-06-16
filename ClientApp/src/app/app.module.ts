@@ -34,6 +34,8 @@ import {
   rentalIncomeLink, 
   royaltyIncomeLink
 } from './urls';
+import { ResourcesService } from './services/resources.service';
+import { NotesService } from './services/notes.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import {
     InterestIncomeService,
     RoyaltyIncomeService,
     RentalIncomeService,
-    CapitalGainsService
+    CapitalGainsService,
+    ResourcesService,
+    NotesService
   ],
   bootstrap: [AppComponent]
 })
