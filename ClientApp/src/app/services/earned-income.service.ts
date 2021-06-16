@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { from, Observable, of } from "rxjs";
-import { tap } from "rxjs/operators";
+import { catchError, tap } from "rxjs/operators";
 import { EarnedIncome } from "../components/earned-income/interfaces/earned-income.model";
 
 @Injectable({
@@ -19,9 +19,11 @@ export class EarnedIncomeService {
       tap(obj => console.log('fetched earned income', obj))
     );
 
-  addEarnedIncome(incomeObj:EarnedIncome) {
-    console.log('added earned income!');
-    console.log('values', incomeObj);
+  addEarnedIncome(incomeObj:EarnedIncome): Observable<EarnedIncome> {
+    return this.http.post<EarnedIncome>(this._baseUrl, incomeObj)
+      .pipe(
+        tap(obj => console.log('added earned income', obj))
+      );
   }
 
   // earnedIncome$ = of(earnedIncome_sample);
