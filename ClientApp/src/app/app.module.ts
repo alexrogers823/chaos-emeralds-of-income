@@ -37,6 +37,7 @@ import {
 import { ResourcesService } from './services/resources.service';
 import { NotesService } from './services/notes.service';
 import { StoreModule } from '@ngrx/store';
+import { userReducer } from './redux/reducers/user.reducer';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({ user: userReducer })
+    StoreModule.forRoot({ user: userReducer }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: mainPageLink, component: MainPageComponent },

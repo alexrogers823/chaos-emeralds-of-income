@@ -19,4 +19,8 @@ export class DividendIncomeComponent {
       {name: 'resource 15'}
     ]
   }
+
+  hasDividendIncomeEmerald() {
+    return 500 > 1000;
+  }
 }
