@@ -6,12 +6,13 @@ import { Emerald } from "src/app/shared/emerald.model";
   templateUrl: './dividend-income.component.html'
 })
 export class DividendIncomeComponent {
+  private goalDividendIncome = 1000;
   dividendIncomeEmerald:Emerald = {
     id: 6,
     title: 'Dividend Income',
     quote: 'test quote',
     author: 'test author',
-    goal: '$1000/mo from dividends',
+    goal: `$${this.goalDividendIncome}/mo from dividends`,
     emeraldImageUrl: 'assets/blue-emerald.png',
     resources: [
       {name: 'resource 13'},
@@ -21,6 +22,6 @@ export class DividendIncomeComponent {
   }
 
   hasDividendIncomeEmerald() {
-    return 500 > 1000;
+    return 500 > this.goalDividendIncome;
   }
 }
