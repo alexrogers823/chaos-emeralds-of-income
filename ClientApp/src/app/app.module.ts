@@ -38,6 +38,7 @@ import { ResourcesService } from './services/resources.service';
 import { NotesService } from './services/notes.service';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './redux/reducers/user.reducer';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { userReducer } from './redux/reducers/user.reducer';
     RentalIncomeComponent,
     DividendIncomeComponent,
     BusinessIncomeComponent,
-    CapitalGainsComponent
+    CapitalGainsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -62,6 +64,7 @@ import { userReducer } from './redux/reducers/user.reducer';
     StoreModule.forRoot({ user: userReducer }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '/login', component: LoginComponent },
       { path: mainPageLink, component: MainPageComponent },
       { path: netWorthLink, component: NetWorthComponent },
       { path: earnedIncomeLink, component: EarnedIncomeComponent },
