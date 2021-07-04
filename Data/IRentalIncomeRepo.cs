@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ChaosEmeraldsOfIncome.Controllers
 {
     public interface IRentalIncomeRepo
