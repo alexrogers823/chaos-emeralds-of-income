@@ -8,8 +8,6 @@ import { RentalIncome } from "./interfaces/rental-income.model";
   templateUrl: './rental-income.component.html'
 })
 export class RentalIncomeComponent implements OnInit {
-  rentalIncome:RentalIncome[] = this.rentalIncomeService.getRentalIncome();
-  
   rentalIncomeEmerald:Emerald = {
     id: 4,
     title: "Rental Income",
@@ -23,6 +21,8 @@ export class RentalIncomeComponent implements OnInit {
       {name: 'resource 12'}
     ]
   }
+
+  rentalIncome$ = this.rentalIncomeService.rentalIncome$;
 
   constructor(private rentalIncomeService:RentalIncomeService) {}
 
