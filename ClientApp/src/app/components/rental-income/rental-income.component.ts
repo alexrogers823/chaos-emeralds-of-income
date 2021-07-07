@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { from } from "rxjs";
+import { mergeScan, scan } from "rxjs/operators";
 import { RentalIncomeService } from "src/app/services/rental-income.service";
 import { Emerald } from "src/app/shared/emerald.model";
 import { RentalIncome } from "./interfaces/rental-income.model";
@@ -8,6 +10,9 @@ import { RentalIncome } from "./interfaces/rental-income.model";
   templateUrl: './rental-income.component.html'
 })
 export class RentalIncomeComponent implements OnInit {
+  targetRentalNetIncome:number = 0.3;
+  actualRent:number;
+  actualMortgage:number;
   rentalIncomeEmerald:Emerald = {
     id: 4,
     title: "Rental Income",
@@ -24,7 +29,50 @@ export class RentalIncomeComponent implements OnInit {
 
   rentalIncome$ = this.rentalIncomeService.rentalIncome$;
 
+  totalMortgage$ = this.rentalIncomeService.rentalIncome$
+    .pipe(
+      mergeScan((acc:number, curr:RentalIncome[]) => {
+        return from(curr)
+          .pipe(
+            scan((start:number, rental:RentalIncome) => start + rental.mortgage, 0)
+          )
+      }, 0)
+    );
+
+  totalRent$ = this.rentalIncomeService.rentalIncome$
+    .pipe(
+      mergeScan((acc:number, curr:RentalIncome[]) => {
+        return from(curr)
+          .pipe(
+            scan((start:number, rental:RentalIncome) => start + rental.rent, 0)
+          )
+      }, 0)
+    );
+
+  // earnedIncomeTotal$ = this.earnedIncomeService.earnedIncome$
+  // .pipe(
+  //   mergeScan((acc:number, curr:EarnedIncome[]) => {
+  //     return from(curr)
+  //       .pipe(
+  //         scan((start:number, job:EarnedIncome) => start + job.incomeAmount, 0)
+  //       )
+  //   }, 0),
+  //   tap(output => console.log('total', output))
+  // );
+
   constructor(private rentalIncomeService:RentalIncomeService) {}
 
   ngOnInit() {}
+
+  hasRentalIncomeEmerald() {
+    this.totalRent$.subscribe(rent => {
+      this.actualRent = rent;
+    });
+
+    this.totalMortgage$.subscribe(mortgage => {
+      this.actualMortgage = mortgage;
+    });
+
+    return (this.actualRent / this.actualMortgage) >= this.targetRentalNetIncome;
+  }
 }

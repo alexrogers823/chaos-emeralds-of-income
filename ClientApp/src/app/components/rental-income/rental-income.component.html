@@ -1,4 +1,4 @@
-<emerald-component [emerald]="rentalIncomeEmerald" [hasEmerald]="false">
+<emerald-component [emerald]="rentalIncomeEmerald" [hasEmerald]="hasRentalIncomeEmerald()">
   <table class="table table-striped" *ngIf="rentalIncome$ | async as rentalIncome">
     <tr>
       <th>Property</th>
