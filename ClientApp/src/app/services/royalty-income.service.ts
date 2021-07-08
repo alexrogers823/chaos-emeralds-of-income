@@ -5,13 +5,17 @@ import { RoyaltyIncome } from "../components/royalty-income/interfaces/royalty-i
 
 @Injectable()
 export class RoyaltyIncomeService {
+  _baseUrl = "api/RoyaltyIncome";
+
   constructor(private http: HttpClient) {}
+
+  royaltyIncome$ = this.http.get<RoyaltyIncome[]>(this._baseUrl);
 
   // getRoyaltyIncome() {
   //   return royaltyIncome_sample;
   // }
 
-  royaltyIncome$ = of(royaltyIncome_sample);
+  // royaltyIncome$ = of(royaltyIncome_sample);
 }
 
 const royaltyIncome_sample:RoyaltyIncome[] = [

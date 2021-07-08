@@ -49,17 +49,6 @@ export class RentalIncomeComponent implements OnInit {
       }, 0)
     );
 
-  // earnedIncomeTotal$ = this.earnedIncomeService.earnedIncome$
-  // .pipe(
-  //   mergeScan((acc:number, curr:EarnedIncome[]) => {
-  //     return from(curr)
-  //       .pipe(
-  //         scan((start:number, job:EarnedIncome) => start + job.incomeAmount, 0)
-  //       )
-  //   }, 0),
-  //   tap(output => console.log('total', output))
-  // );
-
   constructor(private rentalIncomeService:RentalIncomeService) {}
 
   ngOnInit() {}

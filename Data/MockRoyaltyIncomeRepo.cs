@@ -11,7 +11,14 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
         public IEnumerable<RoyaltyIncome> GetAllRoyaltyIncome()
         {
-            throw new System.NotImplementedException();
+            var royalties = new List<RoyaltyIncome>
+            {
+                new RoyaltyIncome{Id=10, Title="Horror Audiobook", Frequency="Monthly", Amount=25.5},
+                new RoyaltyIncome{Id=20, Title="Evolv", Frequency="Monthly", Amount=15.25},
+                new RoyaltyIncome{Id=30, Title="Wrong Side of Heaven", Frequency="Monthly", Amount=14}
+            };
+
+            return royalties;
         }
 
         public void UpdateRoyalty()
