@@ -39,6 +39,7 @@ import { NotesService } from './services/notes.service';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './redux/reducers/user.reducer';
 import { LoginComponent } from './components/login/login.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { LoginComponent } from './components/login/login.component';
     RentalIncomeService,
     CapitalGainsService,
     ResourcesService,
-    NotesService
+    NotesService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
