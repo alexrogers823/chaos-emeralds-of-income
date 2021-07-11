@@ -36,8 +36,7 @@ import {
 } from './urls';
 import { ResourcesService } from './services/resources.service';
 import { NotesService } from './services/notes.service';
-import { StoreModule } from '@ngrx/store';
-import { userReducer } from './redux/reducers/user.reducer';
+// import { userReducer } from './redux/reducers/user.reducer';
 import { LoginComponent } from './components/login/login.component';
 import { UserService } from './services/user.service';
 
@@ -62,7 +61,7 @@ import { UserService } from './services/user.service';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({ user: userReducer }),
+    // StoreModule.forRoot({ user: userReducer }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: '/login', component: LoginComponent },
