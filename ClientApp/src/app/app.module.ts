@@ -39,6 +39,7 @@ import { NotesService } from './services/notes.service';
 // import { userReducer } from './redux/reducers/user.reducer';
 import { LoginComponent } from './components/login/login.component';
 import { UserService } from './services/user.service';
+import { BusinessIncomeService } from './services/business-income.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { UserService } from './services/user.service';
     // StoreModule.forRoot({ user: userReducer }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: '/login', component: LoginComponent },
+      { path: 'login', component: LoginComponent },
       { path: mainPageLink, component: MainPageComponent },
       { path: netWorthLink, component: NetWorthComponent },
       { path: earnedIncomeLink, component: EarnedIncomeComponent },
@@ -79,6 +80,7 @@ import { UserService } from './services/user.service';
   providers: [
     EarnedIncomeService,
     InterestIncomeService,
+    BusinessIncomeService,
     RoyaltyIncomeService,
     RentalIncomeService,
     CapitalGainsService,

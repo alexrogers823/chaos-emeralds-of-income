@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { BusinessIncomeService } from "src/app/services/business-income.service";
 import { Emerald } from "src/app/shared/emerald.model";
 
 @Component({
@@ -19,4 +20,8 @@ export class BusinessIncomeComponent {
 			{name: 'resource 18'}
 		]
 	}
+
+	constructor(private businessIncomeService:BusinessIncomeService) {}
+
+	// $businessIncome = this.businessIncomeService 
 };
