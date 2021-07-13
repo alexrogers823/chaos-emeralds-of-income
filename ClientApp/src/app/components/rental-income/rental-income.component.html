@@ -1,14 +1,18 @@
 <emerald-component [emerald]="rentalIncomeEmerald" [hasEmerald]="hasRentalIncomeEmerald()">
   <table class="table table-striped" *ngIf="rentalIncome$ | async as rentalIncome">
-    <tr>
-      <th>Property</th>
-      <th>Mortgage</th>
-      <th>Monthly Rent</th>
-    </tr>
-    <tr *ngFor="let property of rentalIncome">
-      <td>{{ property.property }}</td>
-      <td>{{ property.mortgage }}</td>
-      <td>{{ property.rent }}</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Mortgage</th>
+        <th>Monthly Rent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let property of rentalIncome">
+        <td>{{ property.property }}</td>
+        <td>{{ property.mortgage }}</td>
+        <td>{{ property.rent }}</td>
+      </tr>
+    </tbody>
   </table>
 </emerald-component>
