@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { User } from "oidc-client";
 
 @Injectable()
 export class UserService {
@@ -8,7 +9,6 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   loginUser() {
-    // return this.http.get<>(this._baseUrl); // TODO: Create user model
-    return true
+    return this.http.get<User>(this._baseUrl);
   }
 }

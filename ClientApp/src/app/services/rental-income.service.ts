@@ -10,11 +10,6 @@ export class RentalIncomeService {
 
   constructor(private http:HttpClient) {}
 
-  // earnedIncome$:Observable<EarnedIncome[]> = this.http.get<EarnedIncome[]>(this._baseUrl)
-  //   .pipe(
-  //     tap(obj => console.log('fetched earned income', obj))
-  //   );
-
   rentalIncome$:Observable<RentalIncome[]> = this.http.get<RentalIncome[]>(this._baseUrl)
     .pipe(
       tap(obj => console.log('fetching rental income...', obj))
