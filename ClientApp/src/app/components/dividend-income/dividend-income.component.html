@@ -1,5 +1,5 @@
 <emerald-component [emerald]="dividendIncomeEmerald" [hasEmerald]="hasDividendIncomeEmerald()">
-  <table class="table table-striped">
+  <table class="table table-striped" *ngIf="dividendIncome$ | async as dividendIncome">
     <thead>
       <tr>
         <th>Investment</th>
@@ -7,13 +7,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>NGRX</td>
-        <td>450</td>
+      <tr *ngFor="let dividend of dividendIncome">
+        <td>{{ dividend.investmentId }}</td>
+        <td>{{ dividend.dividendPayout }}</td>
       </tr>
-      <tr>
+      <tr *ngIf="dividendIncomeTotal$ | async as dividendIncomeTotal">
         <td>Total Dividends</td>
-        <td>450</td>
+        <td>{{ dividendIncomeTotal }}</td>
       </tr>
     </tbody>
   </table>
