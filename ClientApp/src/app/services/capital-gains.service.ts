@@ -6,7 +6,7 @@ import { CapitalGains } from "../components/capital-gains/interfaces/capital-gai
 
 @Injectable()
 export class CapitalGainsService {
-  _baseUrl = "api/capitalGains";
+  _baseUrl = "api/CapitalGains";
 
   constructor(private http:HttpClient) {}
 

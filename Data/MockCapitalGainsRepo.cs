@@ -11,7 +11,14 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
         public IEnumerable<CapitalGains> GetAllCapitalGains()
         {
-            throw new System.NotImplementedException();
+            var capitalGains = new List<CapitalGains>
+            {
+                new CapitalGains{Id=1, Investment="QQQ", CurrentValue=1086.54},
+                new CapitalGains{Id=1, Investment="SPGRX", CurrentValue=337.52},
+                new CapitalGains{Id=1, Investment="MSFT", CurrentValue=545.22}
+            };
+
+            return capitalGains;
         }
     }
 }

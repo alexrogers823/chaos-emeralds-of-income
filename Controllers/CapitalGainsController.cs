@@ -4,18 +4,20 @@ using Microsoft.AspNetCore.Mvc;
 namespace ChaosEmeraldsOfIncome.Controllers
 {
     [ApiController]
-    [Route("api/capitalGains")]
+    [Route("api/CapitalGains")]
     public class CapitalGainsController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<CapitalGains> GetCapitalGains()
+        private readonly ICapitalGainsRepo _repo;
+
+        public CapitalGainsController(ICapitalGainsRepo repo)
         {
-            var capitalGains = new List<CapitalGains>
-            {
-                new CapitalGains{Id=1, Investment="QQQ", CurrentValue=1086.54},
-                new CapitalGains{Id=1, Investment="SPGRX", CurrentValue=337.52},
-                new CapitalGains{Id=1, Investment="MSFT", CurrentValue=545.22}
-            };
+            _repo = repo;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<CapitalGains>> GetCapitalGains()
+        {
+            var capitalGains = _repo.GetAllCapitalGains();
 
             return Ok(capitalGains);
         }
