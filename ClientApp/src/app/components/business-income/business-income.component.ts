@@ -1,6 +1,9 @@
 import { Component } from "@angular/core";
+import { from } from "rxjs";
+import { mergeScan, scan, tap } from "rxjs/operators";
 import { BusinessIncomeService } from "src/app/services/business-income.service";
 import { Emerald } from "src/app/shared/emerald.model";
+import { BusinessIncome } from "./interfaces/business-income.model";
 
 @Component({
 	selector: 'business-income',
@@ -23,5 +26,16 @@ export class BusinessIncomeComponent {
 
 	constructor(private businessIncomeService:BusinessIncomeService) {}
 
-	// $businessIncome = this.businessIncomeService 
+  businessIncome$ = this.businessIncomeService.businessIncome$;
+
+	businessIncomeProfitTotal$ = this.businessIncomeService.businessIncome$
+    .pipe(
+      mergeScan((acc:number, curr:BusinessIncome[]) => {
+        return from(curr)
+          .pipe(
+            scan((start:number, business:BusinessIncome) => start + business.profit, 0)
+          )
+      }, 0),
+      tap(output => console.log('total profit', output))
+    );
 };

@@ -1,5 +1,5 @@
 <emerald-component [emerald]="businessIncomeEmerald" [hasEmerald]="false">
-  <table class="table table-striped">
+  <table class="table table-striped" *ngIf="businessIncome$ | async as businessIncome">
     <thead>
       <tr>
         <th>Business</th>
@@ -8,10 +8,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Alex Inc.</td>
-        <td>430000</td>
-        <td>132000</td>
+      <tr *ngFor="let business of businessIncome">
+        <td>{{ business.businessName }}</td>
+        <td>{{ business.revenue }}</td>
+        <td>{{ business.profit }}</td>
       </tr>
     </tbody>
   </table>

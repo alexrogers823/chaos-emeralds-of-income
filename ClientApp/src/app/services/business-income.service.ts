@@ -9,7 +9,7 @@ export class BusinessIncomeService {
 
   constructor(private http:HttpClient) {}
 
-  $businessIncome = this.http.get<BusinessIncome>(this._baseUrl)
+  businessIncome$ = this.http.get<BusinessIncome[]>(this._baseUrl)
     .pipe(
       tap(obj => console.log('getting business income...', obj))
     )
