@@ -29,6 +29,12 @@ namespace ChaosEmeraldsOfIncome
             });
             services.AddScoped<IEarnedIncomeRepo, MockEarnedIncomeRepo>();
             services.AddScoped<IInterestIncomeRepo, MockInterestIncomeRepo>();
+            services.AddScoped<IRentalIncomeRepo, MockRentalIncomeRepo>();
+            services.AddScoped<ICapitalGainsRepo, MockCapitalGainsRepo>();
+            services.AddScoped<IDividendIncomeRepo, MockDividendIncomeRepo>();
+            services.AddScoped<IRoyaltyIncomeRepo, MockRoyaltyIncomeRepo>();
+            services.AddScoped<IBusinessIncomeRepo, MockBusinessIncomeRepo>();
+            services.AddScoped<IUserRepo, MockUserRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
