@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { UserService } from "src/app/services/user.service";
 
 @Component({
@@ -7,10 +7,15 @@ import { UserService } from "src/app/services/user.service";
 })
 export class LoginComponent {
   private user;
+  @Input() demoDisabled:boolean = true;
 
   constructor(private userService:UserService) {}
 
   getUser() {
     return this.userService.loginUser();
   }
+
+  enableDemo() {
+    this.demoDisabled = false;
+  } 
 }

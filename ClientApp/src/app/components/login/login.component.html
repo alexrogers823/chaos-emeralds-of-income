@@ -1,7 +1,21 @@
 <form>
-  <input type="text" name="username" placeholder="username" />
-  <input type="text" name="password" placeholder="password" />
-  <button>Let's Go</button>
-  <label for="demo">Demo User Example</label>
-  <input type="checkbox" name="demo" disabled>
+  <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" />
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="demo" name="demo" [disabled]="demoDisabled">
+    <label for="demo">Demo User Example</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Let's Go</button>
 </form>

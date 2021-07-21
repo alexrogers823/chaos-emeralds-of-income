@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { of } from "rxjs";
+import { tap } from "rxjs/operators";
 import { RoyaltyIncome } from "../components/royalty-income/interfaces/royalty-income.model";
 
 @Injectable()
@@ -9,7 +10,10 @@ export class RoyaltyIncomeService {
 
   constructor(private http: HttpClient) {}
 
-  royaltyIncome$ = this.http.get<RoyaltyIncome[]>(this._baseUrl);
+  royaltyIncome$ = this.http.get<RoyaltyIncome[]>(this._baseUrl)
+    .pipe(
+      tap(obj => console.log('fetched royalty income', obj))
+    );
 
   // getRoyaltyIncome() {
   //   return royaltyIncome_sample;
