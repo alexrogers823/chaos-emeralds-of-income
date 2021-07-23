@@ -51,17 +51,17 @@ export class RentalIncomeComponent implements OnInit {
 
   constructor(private rentalIncomeService:RentalIncomeService) {}
 
-  ngOnInit() {}
-
-  hasRentalIncomeEmerald() {
+  ngOnInit() {
     this.totalRent$.subscribe(rent => {
       this.actualRent = rent;
     });
-
+  
     this.totalMortgage$.subscribe(mortgage => {
       this.actualMortgage = mortgage;
     });
+  }
 
+  hasRentalIncomeEmerald() {
     return (this.actualRent / this.actualMortgage) >= this.targetRentalNetIncome;
   }
 }

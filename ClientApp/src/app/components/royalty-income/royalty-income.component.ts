@@ -9,7 +9,7 @@ import { RoyaltyIncome } from "./interfaces/royalty-income.model";
 	selector: 'royalty-income',
 	templateUrl: './royalty-income.component.html',
 })
-export class RoyaltyIncomeComponent {
+export class RoyaltyIncomeComponent implements OnInit {
   royaltyIncome:RoyaltyIncome[];
   private royaltyIncomeGoal:number = 50;
   private currentMonthlyRoyalties;
@@ -42,11 +42,13 @@ export class RoyaltyIncomeComponent {
 
   constructor(private royaltyIncomeService:RoyaltyIncomeService) { }
 
-  hasRoyaltyIncomeEmerald() {
+  ngOnInit() {
     this.royaltyIncomeTotal$.subscribe(royalty => {
       this.currentMonthlyRoyalties = royalty;
     })
+  }
 
+  hasRoyaltyIncomeEmerald() {
     return this.currentMonthlyRoyalties >= this.royaltyIncomeGoal;
   }
 
