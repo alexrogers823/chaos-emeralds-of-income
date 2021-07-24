@@ -9,11 +9,11 @@
     <tbody>
       <tr *ngFor="let dividend of dividendIncome">
         <td>{{ dividend.investmentId }}</td>
-        <td>{{ dividend.dividendPayout }}</td>
+        <td>{{ dividend.dividendPayout | currency }}</td>
       </tr>
       <tr *ngIf="dividendIncomeTotal$ | async as dividendIncomeTotal">
         <td>Total Dividends</td>
-        <td>{{ dividendIncomeTotal }}</td>
+        <td>{{ dividendIncomeTotal | currency }}</td>
       </tr>
     </tbody>
   </table>

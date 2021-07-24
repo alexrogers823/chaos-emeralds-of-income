@@ -10,8 +10,8 @@
     <tbody>
       <tr *ngFor="let property of rentalIncome">
         <td>{{ property.property }}</td>
-        <td>{{ property.mortgage }}</td>
-        <td>{{ property.rent }}</td>
+        <td>{{ property.mortgage | currency }}</td>
+        <td>{{ property.rent | currency }}</td>
       </tr>
     </tbody>
   </table>
