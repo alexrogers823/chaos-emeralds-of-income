@@ -16,8 +16,8 @@ export class RentalIncomeComponent implements OnInit {
   rentalIncomeEmerald:Emerald = {
     id: 4,
     title: "Rental Income",
-    quote: "'Test Quote'",
-    author: "'Test Author'",
+    quote: "Ninety percent of all millionaries become so through owning real estate",
+    author: "Andrew Carnegie",
     goal: "30% net income from rental properties",
     emeraldImageUrl: 'assets/lightblue-emerald.png',
     resources: [

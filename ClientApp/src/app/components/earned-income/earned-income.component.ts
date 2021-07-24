@@ -42,7 +42,7 @@ export class EarnedIncomeComponent implements OnInit {
     title: 'Earned Income',
     quote: '"When you work on something that only has the capacity to make you 5 dollars, it does not matter how much harder you work – the most you will make is 5 dollars."',
     author: 'Idowu Koyenikan',
-    goal: this.goalIncome.toString(),
+    goal: `$${this.goalIncome}/yr`,
     emeraldImageUrl: 'assets/green-emerald.png',
     resources: [
       {name: 'resource 1'},

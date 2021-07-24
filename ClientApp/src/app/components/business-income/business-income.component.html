@@ -10,8 +10,13 @@
     <tbody>
       <tr *ngFor="let business of businessIncome">
         <td>{{ business.businessName }}</td>
-        <td>{{ business.revenue }}</td>
-        <td>{{ business.profit }}</td>
+        <td>{{ business.revenue | currency }}</td>
+        <td>{{ business.profit | currency }}</td>
+      </tr>
+      <tr *ngIf="businessIncomeProfitTotal$ | async as total">
+        <td>Total</td>
+        <td></td>
+        <td>{{ total | currency }}</td>
       </tr>
     </tbody>
   </table>

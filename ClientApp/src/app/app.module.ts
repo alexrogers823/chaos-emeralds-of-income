@@ -40,6 +40,7 @@ import { NotesService } from './services/notes.service';
 import { LoginComponent } from './components/login/login.component';
 import { UserService } from './services/user.service';
 import { BusinessIncomeService } from './services/business-income.service';
+import { DividendIncomeService } from './services/dividend-income.service';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { BusinessIncomeService } from './services/business-income.service';
     RoyaltyIncomeService,
     RentalIncomeService,
     CapitalGainsService,
+    DividendIncomeService,
     ResourcesService,
     NotesService,
     UserService

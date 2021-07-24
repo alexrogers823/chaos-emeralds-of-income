@@ -19,7 +19,7 @@ export class RoyaltyIncomeComponent implements OnInit {
     title: "Royalty Income",
     quote: "'The royalty checks each quarter pay the utilities on this big house'",
     author: "Stan Perkins",
-    goal: "Receive $50/mo in royalties monthly",
+    goal: `Receive $${this.royaltyIncomeGoal}/mo in royalties`,
     emeraldImageUrl: 'assets/white-emerald.png',
     resources: [
       {name: 'resource 7'},

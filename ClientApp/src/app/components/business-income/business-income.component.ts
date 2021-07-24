@@ -13,8 +13,8 @@ export class BusinessIncomeComponent {
 	businessIncomeEmerald:Emerald = {
 		id: 7,
 		title: 'Business Income',
-		quote: 'Test quote',
-		author: 'test author',
+		quote: 'Good businesses generate missions to drive their profits. Great businesses generate profits to drive their missions',
+		author: 'Tony Hsieh',
 		goal: '$10000 annual net profit',
 		emeraldImageUrl: 'assets/red-emerald.png',
 		resources: [
