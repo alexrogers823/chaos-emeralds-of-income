@@ -6,6 +6,7 @@
         <th>Amount</th>
         <th>Frequency</th>
         <th>Annual Amount</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -14,12 +15,16 @@
         <td>{{ job.incomeAmount | currency }}</td>
         <td>{{ job.frequency }}</td>
         <td>{{ job.incomeAmount | currency }}</td>
+        <td>
+          <button class="btn btn-outline-secondary btn-sm">Edit</button>
+        </td>
       </tr>
       <tr *ngIf="earnedIncomeTotal$ | async as earnedIncomeTotal">
         <td>Current Income</td>
         <td></td>
         <td></td>
         <td>{{ earnedIncomeTotal | currency }}</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

@@ -4,16 +4,21 @@
       <th>Account Name</th>
       <th>Interest (%)</th>
       <th>Interest ($)</th>
+      <th></th>
     </tr>
     <tr *ngFor="let account of interestIncome">
       <td>{{ account.name }}</td>
       <td>{{ account.interestPercent | percent:'1.2-2' }}</td>
       <td>{{ account.interestDollar | currency }}</td>
+      <td>
+        <button class="btn btn-outline-secondary btn-sm">Edit</button>
+      </td>
     </tr>
     <tr *ngIf="interestIncomeTotal$ | async as total">
       <td>Total Interest per month:</td>
       <td></td>
       <td>{{ total | currency }}</td>
+      <td></td>
     </tr>
   </table>
 </emerald-component>
