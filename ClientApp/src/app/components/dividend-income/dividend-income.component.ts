@@ -15,7 +15,7 @@ export class DividendIncomeComponent implements OnInit {
   dividendIncomeEmerald:Emerald = {
     id: 6,
     title: 'Dividend Income',
-    quote: 'I do not own a single security anywhere that doesn\'t pay a dividend, and I formed a mutual-fund company with that very simple philosophy',
+    quote: '"I do not own a single security anywhere that doesn\'t pay a dividend, and I formed a mutual-fund company with that very simple philosophy"',
     author: 'Kevin O\'Leary',
     goal: `$${this.goalDividendIncome}/mo from dividends`,
     emeraldImageUrl: 'assets/blue-emerald.png',

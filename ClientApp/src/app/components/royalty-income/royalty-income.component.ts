@@ -17,7 +17,7 @@ export class RoyaltyIncomeComponent implements OnInit {
   royaltyIncomeEmerald:Emerald = {
     id: 3,
     title: "Royalty Income",
-    quote: "'The royalty checks each quarter pay the utilities on this big house'",
+    quote: '"The royalty checks each quarter pay the utilities on this big house"',
     author: "Stan Perkins",
     goal: `Receive $${this.royaltyIncomeGoal}/mo in royalties`,
     emeraldImageUrl: 'assets/white-emerald.png',

@@ -13,6 +13,11 @@
         <td>{{ property.mortgage | currency }}</td>
         <td>{{ property.rent | currency }}</td>
       </tr>
+      <tr>
+        <td>Total</td>
+        <td>{{ actualMortgage | currency }}</td>
+        <td>{{ actualRent | currency }}</td> <!-- change this to reflect async pipe -->
+      </tr>
     </tbody>
   </table>
 </emerald-component>

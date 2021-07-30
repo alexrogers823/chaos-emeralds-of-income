@@ -15,7 +15,7 @@ export class BusinessIncomeComponent implements OnInit {
 	businessIncomeEmerald:Emerald = {
 		id: 7,
 		title: 'Business Income',
-		quote: 'Good businesses generate missions to drive their profits. Great businesses generate profits to drive their missions',
+		quote: '"Good businesses generate missions to drive their profits. Great businesses generate profits to drive their missions"',
 		author: 'Tony Hsieh',
 		goal: `$${this.businessIncomeGoal} annual net profit`,
 		emeraldImageUrl: 'assets/red-emerald.png',
