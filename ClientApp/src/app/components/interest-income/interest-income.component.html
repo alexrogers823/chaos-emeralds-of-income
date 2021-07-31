@@ -21,5 +21,19 @@
       <td></td>
     </tr>
   </table>
+
+  <br />
+  <form #interestIncome="ngForm" (ngSubmit)="addInterestIncome(interestIncome)">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Add Bank/Source" aria-label="bank" name="bank" ngModel #bank="ngModel" />
+      <input type="text" class="form-control" placeholder="Add Interest Percentage" aria-label="percent" name="percent" ngModel #percent="ngModel" />
+      <input type="text" class="form-control" placeholder="Add Interest in Dollar" aria-label="dollar" name="dollar" ngModel #dollar="ngModel" />
+      <div class="input-group-append">
+        <button class="btn btn-success">Add Interest Income</button>
+      </div>
+    </div>
+  </form>
+  <br />
+
 </emerald-component>
   

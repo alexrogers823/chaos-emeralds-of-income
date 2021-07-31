@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
 import { from, Observable } from "rxjs";
 import { mergeScan, scan, shareReplay, tap } from "rxjs/operators";
 import { InterestIncomeService } from "src/app/services/interest-income.service";
@@ -62,5 +63,9 @@ export class InterestIncomeComponent implements OnInit {
 
   hasInterestIncomeEmerald(): boolean {
     return this.totalInterest >= this.goalInterest;
+  }
+
+  addInterestIncome(interestIncome: NgForm) {
+    // this.earnedIncomeService.addEarnedIncome(earnedIncome.value);
   }
 }
