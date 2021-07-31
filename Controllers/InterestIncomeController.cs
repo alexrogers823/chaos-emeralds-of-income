@@ -21,5 +21,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
             return Ok(interestIncome);
         }
+
+        [HttpPost]
+        public ActionResult<InterestIncome> AddInterestIncome(InterestIncome newIncome)
+        {
+            return CreatedAtRoute(new {Id = 9}, newIncome);
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,9 +12,25 @@ namespace ChaosEmeraldsOfIncome.Controllers
         {
             _context = context;
         }
+
+        public void AddInterestIncome(InterestIncome newIncome)
+        {
+            if (newIncome == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            _context.InterestIncome.Add(newIncome);
+        }
+
         public IEnumerable<InterestIncome> GetAllInterestIncome()
         {
             return _context.InterestIncome.ToList();
+        }
+
+        public void UpdateInterestIncome()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

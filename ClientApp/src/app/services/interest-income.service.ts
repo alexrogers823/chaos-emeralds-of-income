@@ -16,6 +16,13 @@ export class InterestIncomeService {
     .pipe(
       tap(obj => console.log('fetching interest income...', obj))
     )
+
+  addInterestIncome(incomeObj:InterestIncome): Observable<InterestIncome> {
+    return this.http.post<InterestIncome>(this._baseUrl, incomeObj)
+      .pipe(
+        tap(obj => console.log('added interest income', obj))
+      );
+  }
 }
 
 const interestIncome_sample:InterestIncome[] = [

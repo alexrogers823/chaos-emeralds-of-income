@@ -1,9 +1,19 @@
+using System;
 using System.Collections.Generic;
 
 namespace ChaosEmeraldsOfIncome.Controllers
 {
     public class MockInterestIncomeRepo : IInterestIncomeRepo
     {
+        public void AddInterestIncome(InterestIncome newIncome)
+        {
+            if (newIncome == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+        }
+
         public IEnumerable<InterestIncome> GetAllInterestIncome()
         {
             var interestIncome = new List<InterestIncome>
@@ -15,6 +25,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
             };
 
             return interestIncome;
+        }
+
+        public void UpdateInterestIncome()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
