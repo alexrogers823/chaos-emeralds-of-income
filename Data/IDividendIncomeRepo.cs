@@ -6,5 +6,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
     {
         IEnumerable<DividendIncome> GetDividendIncome();
         void AddDividendIncome();
+        bool SaveChanges();
     }
 }

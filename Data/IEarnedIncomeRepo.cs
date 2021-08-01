@@ -7,5 +7,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
         IEnumerable<EarnedIncome> GetEarnedIncome();
         // EarnedIncome InsertEarnedIncome(EarnedIncome income);
         IEnumerable<EarnedIncome> InsertEarnedIncome(EarnedIncome income); // temporary
+        bool SaveChanges();
     }
 }

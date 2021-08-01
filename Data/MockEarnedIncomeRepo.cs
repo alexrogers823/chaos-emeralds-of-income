@@ -42,5 +42,10 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
             return newEarnedIncome;
         }
+
+        public bool SaveChanges()
+        {
+            return true;
+        }
     }
 }

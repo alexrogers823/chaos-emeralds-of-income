@@ -27,6 +27,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
             throw new System.NotImplementedException();
         }
 
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public bool SetExampleUser(string example)
         {
             if (example == "checked")

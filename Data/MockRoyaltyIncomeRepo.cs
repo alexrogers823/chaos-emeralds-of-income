@@ -21,6 +21,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return royalties;
         }
 
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void UpdateRoyalty()
         {
             throw new System.NotImplementedException();

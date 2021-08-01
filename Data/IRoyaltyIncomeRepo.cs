@@ -7,5 +7,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
         IEnumerable<RoyaltyIncome> GetAllRoyaltyIncome();
         void AddRoyalty();
         void UpdateRoyalty();
+        bool SaveChanges();
     }
 }

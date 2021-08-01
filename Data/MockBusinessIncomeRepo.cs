@@ -20,6 +20,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return businesses;
         }
 
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void UpdateBusiness()
         {
             throw new System.NotImplementedException();

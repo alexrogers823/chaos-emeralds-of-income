@@ -25,5 +25,10 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
             return properties;
         }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

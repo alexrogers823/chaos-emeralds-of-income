@@ -7,5 +7,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
         IEnumerable<RentalIncome> GetAllRentalProperties();
         void AddRentalProperty();
         void EditRentalProperty();
+        bool SaveChanges();
     }
 }

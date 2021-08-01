@@ -21,5 +21,10 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
             return dividendIncome;
         }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

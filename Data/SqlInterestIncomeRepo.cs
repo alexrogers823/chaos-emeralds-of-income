@@ -28,6 +28,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return _context.InterestIncome.ToList();
         }
 
+        public bool SaveChanges()
+        {
+            return true;
+        }
+
         public void UpdateInterestIncome()
         {
             throw new System.NotImplementedException();

@@ -6,5 +6,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
     {
         IEnumerable<CapitalGains> GetAllCapitalGains();
         void AddCapitalGain();
+        bool SaveChanges();
     }
 }

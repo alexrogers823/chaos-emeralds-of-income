@@ -28,6 +28,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public ActionResult<EarnedIncome> InsertEarnedIncome(EarnedIncome income)
         {
             var newIncome = _repo.InsertEarnedIncome(income);
+            _repo.SaveChanges();
 
             // return CreatedAtRoute(newIncome);
             return Ok(newIncome);

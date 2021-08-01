@@ -7,5 +7,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
         User LogoutUser();
         bool SetExampleUser(string example);
         void AddUser();
+        bool SaveChanges();
     }
 }
