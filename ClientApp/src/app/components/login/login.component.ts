@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { NgForm } from "@angular/forms";
 import { UserService } from "src/app/services/user.service";
 
 @Component({
@@ -18,4 +19,9 @@ export class LoginComponent {
   enableDemo() {
     this.demoDisabled = false;
   } 
+
+  attemptLogin(loginInfo: NgForm):boolean {
+    console.log('login attempt', loginInfo.value)
+    return true;
+  }
 }

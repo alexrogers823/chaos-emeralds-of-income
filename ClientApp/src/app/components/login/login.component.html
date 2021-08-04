@@ -1,15 +1,15 @@
-<form>
+<form #login="ngForm" (ngSubmit)="attemptLogin(login)">
   <div class="form-row">
     <div class="col">
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" name="username" />
+        <input type="text" class="form-control" name="username" ngModel #username="ngModel" />
       </div>
     </div>
     <div class="col">
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" />
+        <input type="password" class="form-control" name="password" ngModel #password="ngModel" />
       </div>
     </div>
   </div>
@@ -17,5 +17,5 @@
     <input type="checkbox" class="form-check-input" id="demo" name="demo" [disabled]="demoDisabled">
     <label for="demo">Demo User Example</label>
   </div>
-  <button type="submit" class="btn btn-primary">Let's Go</button>
+  <button class="btn btn-primary">Let's Go</button>
 </form>
