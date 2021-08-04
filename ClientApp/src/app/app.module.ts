@@ -29,6 +29,7 @@ import {
   dividendIncomeLink,
   earnedIncomeLink,
   interestIncomeLink,
+  loginLink,
   mainPageLink, 
   netWorthLink, 
   rentalIncomeLink, 
@@ -65,8 +66,8 @@ import { DividendIncomeService } from './services/dividend-income.service';
     FormsModule,
     // StoreModule.forRoot({ user: userReducer }),
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'login', component: LoginComponent },
+      { path: '', redirectTo: loginLink, pathMatch: 'full' },
+      { path: loginLink, component: LoginComponent },
       { path: mainPageLink, component: MainPageComponent },
       { path: netWorthLink, component: NetWorthComponent },
       { path: earnedIncomeLink, component: EarnedIncomeComponent },

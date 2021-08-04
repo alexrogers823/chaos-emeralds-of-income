@@ -7,3 +7,4 @@ export const rentalIncomeLink = 'rental-income';
 export const dividendIncomeLink = 'dividend-income';
 export const businessIncomeLink = 'business-income';
 export const capitalGainsLink = 'capital-gains';
+export const loginLink = 'login';
