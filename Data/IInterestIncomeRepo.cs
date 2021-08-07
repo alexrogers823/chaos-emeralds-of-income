@@ -6,7 +6,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
     {
         IEnumerable<InterestIncome> GetAllInterestIncome();
         void AddInterestIncome(InterestIncome newIncome);
-        void UpdateInterestIncome();
+        void UpdateInterestIncome(InterestIncome incomeObj);
         bool SaveChanges();
     }
 }

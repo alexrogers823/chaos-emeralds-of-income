@@ -29,5 +29,13 @@ namespace ChaosEmeraldsOfIncome.Controllers
             _repo.SaveChanges();
             return CreatedAtRoute(new {Id = 9}, newIncome);
         }
+
+        [HttpPut]
+        public ActionResult<InterestIncome> UpdateInterestIncome(InterestIncome incomeObj)
+        {
+            _repo.UpdateInterestIncome(incomeObj);
+            _repo.SaveChanges();
+            return Ok(incomeObj); //Change this to reflect updated income
+        }
     }
 }

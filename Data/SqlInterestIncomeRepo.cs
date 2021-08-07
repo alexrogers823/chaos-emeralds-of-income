@@ -33,7 +33,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return true;
         }
 
-        public void UpdateInterestIncome()
+        public void UpdateInterestIncome(InterestIncome incomeObj)
         {
             throw new System.NotImplementedException();
         }
