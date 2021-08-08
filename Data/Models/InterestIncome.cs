@@ -8,6 +8,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
         [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
+        [Required]
         public string Name { get; set; }
         public double? TotalSavings { get; set; }
         public double InterestPercent { get; set; }
