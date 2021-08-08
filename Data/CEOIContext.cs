@@ -16,6 +16,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public DbSet<DividendIncome> DividendIncome { get; set; }
         public DbSet<RoyaltyIncome> RoyaltyIncome { get; set; }
         public DbSet<BusinessIncome> BusinessIncome { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Goal> Goals { get; set; }
+        public DbSet<EmeraldInfo> Emeralds { get; set; }
+        public DbSet<Note> Notes { get; set; }
+        public DbSet<Resource> Resources { get; set; }
+
     }
 }
