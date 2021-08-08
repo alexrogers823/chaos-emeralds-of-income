@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ChaosEmeraldsOfIncome.Controllers
 {
     public class Note
     {
+        [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
         public int IncomeId { get; set; }
