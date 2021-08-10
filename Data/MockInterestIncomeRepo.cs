@@ -27,6 +27,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return interestIncome;
         }
 
+        public InterestIncome GetInterestIncomeById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool SaveChanges()
         {
             throw new NotImplementedException();

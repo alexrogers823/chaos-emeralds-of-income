@@ -28,6 +28,16 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return _context.InterestIncome.ToList();
         }
 
+        public InterestIncome GetInterestIncomeById(int id)
+        {
+            if (id != null)
+            {
+                return _context.InterestIncome.FirstOrDefault(p => p.Id == id);
+            }
+
+            throw new ArgumentNullException();
+        }
+
         public bool SaveChanges()
         {
             return true;

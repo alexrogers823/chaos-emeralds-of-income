@@ -16,6 +16,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return earnedIncome;
         }
 
+        public EarnedIncome GetEarnedIncomeById(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
         // public EarnedIncome InsertEarnedIncome(EarnedIncome income)
         public IEnumerable<EarnedIncome> InsertEarnedIncome(EarnedIncome income) // temporary
         {
@@ -46,6 +51,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public bool SaveChanges()
         {
             return true;
+        }
+
+        public void UpdateEarnedIncome(EarnedIncome income)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

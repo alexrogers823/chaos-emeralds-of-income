@@ -22,6 +22,13 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return Ok(interestIncome);
         }
 
+        [HttpGet("{id}", Name="GetInterestIncomeById")]
+        public ActionResult<InterestIncome> GetInterestIncomeById(int id)
+        {
+            var interestIncome = _repo.GetInterestIncomeById(id);
+            return Ok(interestIncome);
+        }
+
         [HttpPost]
         public ActionResult<InterestIncome> AddInterestIncome(InterestIncome newIncome)
         {

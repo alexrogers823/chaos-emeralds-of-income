@@ -6,7 +6,11 @@ namespace ChaosEmeraldsOfIncome.Controllers
     {
         IEnumerable<EarnedIncome> GetEarnedIncome();
         // EarnedIncome InsertEarnedIncome(EarnedIncome income);
+
+        EarnedIncome GetEarnedIncomeById(int id);
         IEnumerable<EarnedIncome> InsertEarnedIncome(EarnedIncome income); // temporary
+
+        void UpdateEarnedIncome(EarnedIncome income);
         bool SaveChanges();
     }
 }
