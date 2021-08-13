@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using AutoMapper;
+using ChaosEmeraldsOfIncome.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChaosEmeraldsOfIncome.Controllers
@@ -9,26 +11,28 @@ namespace ChaosEmeraldsOfIncome.Controllers
     public class EarnedIncomeController : ControllerBase
     {
         private readonly IEarnedIncomeRepo _repo;
+        private readonly IMapper _mapper;
 
-        public EarnedIncomeController(IEarnedIncomeRepo repo)
+        public EarnedIncomeController(IEarnedIncomeRepo repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public ActionResult<EarnedIncome> GetEarnedIncome()
+        public ActionResult<IEnumerable<EarnedIncomeReadDto>> GetEarnedIncome()
         {
 
             var earnedIncome = _repo.GetEarnedIncome();
 
-            return Ok(earnedIncome);
+            return Ok(_mapper.Map<IEnumerable<EarnedIncomeReadDto>>(earnedIncome));
         }
 
         [HttpGet("{id}", Name="GetEarnedIncomeById")]
-        public ActionResult<EarnedIncome> GetEarnedIncomeById(int id)
+        public ActionResult<EarnedIncomeReadDto> GetEarnedIncomeById(int id)
         {
             var earnedIncome = _repo.GetEarnedIncomeById(id);
-            return Ok(earnedIncome);
+            return Ok(_mapper.Map<EarnedIncomeReadDto>(earnedIncome));
         }
 
         [HttpPost]

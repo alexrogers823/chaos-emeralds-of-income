@@ -8,7 +8,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
         // EarnedIncome InsertEarnedIncome(EarnedIncome income);
 
         EarnedIncome GetEarnedIncomeById(int id);
-        void InsertEarnedIncome(EarnedIncome income); // temporary
+        void InsertEarnedIncome(EarnedIncome income);
 
         void UpdateEarnedIncome(EarnedIncome income);
         bool SaveChanges();

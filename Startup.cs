@@ -1,3 +1,5 @@
+using System;
+using AutoMapper;
 using ChaosEmeraldsOfIncome.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,6 +25,7 @@ namespace ChaosEmeraldsOfIncome
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CEOIContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("CEOIConnection")));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

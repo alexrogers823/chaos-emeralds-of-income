@@ -22,7 +22,6 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return _context.EarnedIncome.FirstOrDefault(p => p.Id == id);
         }
 
-        // change this to void 
         public void InsertEarnedIncome(EarnedIncome income)
         {
             if (income == null)
@@ -36,7 +35,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
         public bool SaveChanges()
         {
-            throw new NotImplementedException();
+            return (_context.SaveChanges() >= 0);
         }
 
         public void UpdateEarnedIncome(EarnedIncome income)
