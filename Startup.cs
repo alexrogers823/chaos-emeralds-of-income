@@ -29,7 +29,7 @@ namespace ChaosEmeraldsOfIncome
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            services.AddScoped<IEarnedIncomeRepo, MockEarnedIncomeRepo>();
+            services.AddScoped<IEarnedIncomeRepo, SqlEarnedIncomeRepo>();
             services.AddScoped<IInterestIncomeRepo, MockInterestIncomeRepo>();
             services.AddScoped<IRentalIncomeRepo, MockRentalIncomeRepo>();
             services.AddScoped<ICapitalGainsRepo, MockCapitalGainsRepo>();
