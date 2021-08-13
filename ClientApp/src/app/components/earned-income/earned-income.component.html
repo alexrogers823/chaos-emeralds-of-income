@@ -32,9 +32,9 @@
   <br />
   <form #earnedIncome="ngForm" (ngSubmit)="addEarnedIncome(earnedIncome)">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Add Job" aria-label="job" name="job" ngModel #job="ngModel" />
-      <input type="text" class="form-control" placeholder="Add Income" aria-label="income" name="income" ngModel #income="ngModel" />
-      <select id="incomeFrequency" name="incomeFrequency" class="form-control" ngModel #frequency="ngModel">
+      <input type="text" class="form-control" placeholder="Add Job" aria-label="incomeTitle" name="incomeTitle" ngModel #incomeTitle="ngModel" />
+      <input type="number" class="form-control" placeholder="Add Income" aria-label="incomeAmount" name="incomeAmount" ngModel #incomeAmount="ngModel" />
+      <select id="frequency" name="frequency" class="form-control" ngModel #frequency="ngModel">
         <option value="annually" selected>Annually</option>
         <option value="semiAnnually">Semi-Annually</option>
         <option value="quarterly">Quarterly</option>

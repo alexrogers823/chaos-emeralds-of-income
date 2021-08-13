@@ -86,6 +86,7 @@ export class EarnedIncomeComponent implements OnInit {
   }
 
   addEarnedIncome(earnedIncome: NgForm) {
-    this.earnedIncomeService.addEarnedIncome(earnedIncome.value);
+    this.earnedIncomeService
+      .addEarnedIncome(earnedIncome.value);
   }
 }

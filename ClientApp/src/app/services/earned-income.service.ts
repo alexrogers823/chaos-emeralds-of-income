@@ -1,8 +1,15 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { from, Observable, of } from "rxjs";
+import { from, Observable, of, throwError } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 import { EarnedIncome } from "../components/earned-income/interfaces/earned-income.model";
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: 'my-auth-token'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +27,31 @@ export class EarnedIncomeService {
     );
 
   addEarnedIncome(incomeObj:EarnedIncome): Observable<EarnedIncome> {
-    return this.http.post<EarnedIncome>(this._baseUrl, incomeObj)
+    console.log(incomeObj)
+    return this.http.post<EarnedIncome>(this._baseUrl, incomeObj, httpOptions)
       .pipe(
-        tap(obj => console.log('added earned income', obj))
+        catchError(this.handleError)
       );
   }
 
-  // earnedIncome$ = of(earnedIncome_sample);
+  private handleError(error:HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(
+      'Something bad happened; please try again later.');
+  }
 
 }
+
+
 
 const earnedIncome_sample:EarnedIncome[] = [
   {
