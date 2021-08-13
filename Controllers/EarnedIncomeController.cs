@@ -32,17 +32,24 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public ActionResult<EarnedIncomeReadDto> GetEarnedIncomeById(int id)
         {
             var earnedIncome = _repo.GetEarnedIncomeById(id);
+
+            if (earnedIncome == null)
+            {
+                return NotFound();
+            }
             return Ok(_mapper.Map<EarnedIncomeReadDto>(earnedIncome));
         }
 
         [HttpPost]
-        public ActionResult<EarnedIncome> InsertEarnedIncome(EarnedIncome income)
+        public ActionResult<EarnedIncomeReadDto> InsertEarnedIncome(EarnedIncomeCreateDto incomeCreateDto)
         {
-            _repo.InsertEarnedIncome(income);
+            var incomeModel = _mapper.Map<EarnedIncome>(incomeCreateDto);
+            _repo.InsertEarnedIncome(incomeModel);
             _repo.SaveChanges();
 
-            // return CreatedAtRoute(newIncome);
-            return Ok();
+            var incomeReadDto = _mapper.Map<EarnedIncomeReadDto>(incomeModel);
+
+            return CreatedAtRoute(nameof(GetEarnedIncomeById), new {Id = incomeReadDto.Id}, incomeReadDto);
         }
     }
 }

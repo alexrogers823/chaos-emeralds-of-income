@@ -4,6 +4,7 @@ namespace ChaosEmeraldsOfIncome.Dtos
 {
     public class EarnedIncomeReadDto
     {
+        public int Id { get; set; }
         public int UserId { get; set; }
         public string IncomeTitle { get; set; }
         public int IncomeAmount { get; set; }
