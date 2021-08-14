@@ -40,7 +40,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
         public void UpdateEarnedIncome(EarnedIncome income)
         {
-            throw new NotImplementedException();
+
         }
     }
 }

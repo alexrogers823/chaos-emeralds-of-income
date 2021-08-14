@@ -89,4 +89,8 @@ export class EarnedIncomeComponent implements OnInit {
     this.earnedIncomeService
       .addEarnedIncome(earnedIncome.value);
   }
+
+  editEarnedIncome(earnedIncome) {
+    
+  }
 }
