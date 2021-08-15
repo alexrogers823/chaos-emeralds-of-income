@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ChaosEmeraldsOfIncome.Controllers
+namespace ChaosEmeraldsOfIncome.Models
 {
     public class EmeraldInfo
     {

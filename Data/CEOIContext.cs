@@ -1,3 +1,4 @@
+using ChaosEmeraldsOfIncome.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChaosEmeraldsOfIncome.Controllers

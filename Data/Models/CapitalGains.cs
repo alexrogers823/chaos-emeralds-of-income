@@ -1,6 +1,6 @@
 using System;
 
-namespace ChaosEmeraldsOfIncome.Controllers
+namespace ChaosEmeraldsOfIncome.Models
 {
     public class CapitalGains
     {
