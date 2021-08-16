@@ -1,6 +1,7 @@
 using AutoMapper;
 using ChaosEmeraldsOfIncome.Controllers;
 using ChaosEmeraldsOfIncome.Dtos;
+using ChaosEmeraldsOfIncome.Models;
 
 namespace ChaosEmeraldsOfIncome.Profiles
 {

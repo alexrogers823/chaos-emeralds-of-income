@@ -1,3 +1,5 @@
+using ChaosEmeraldsOfIncome.Models;
+
 namespace ChaosEmeraldsOfIncome.Controllers
 {
     public interface IUserRepo

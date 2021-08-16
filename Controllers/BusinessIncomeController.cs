@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ChaosEmeraldsOfIncome.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChaosEmeraldsOfIncome.Controllers
