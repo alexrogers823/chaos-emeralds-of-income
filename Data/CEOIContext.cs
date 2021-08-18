@@ -1,7 +1,7 @@
 using ChaosEmeraldsOfIncome.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChaosEmeraldsOfIncome.Controllers
+namespace ChaosEmeraldsOfIncome.Data
 {
     public class CEOIContext : DbContext
     {

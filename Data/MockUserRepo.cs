@@ -1,6 +1,6 @@
 using ChaosEmeraldsOfIncome.Models;
 
-namespace ChaosEmeraldsOfIncome.Controllers
+namespace ChaosEmeraldsOfIncome.Data
 {
     public class MockUserRepo : IUserRepo
     {

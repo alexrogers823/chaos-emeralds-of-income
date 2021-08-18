@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using ChaosEmeraldsOfIncome.Models;
 
-namespace ChaosEmeraldsOfIncome.Controllers
+namespace ChaosEmeraldsOfIncome.Data
 {
     public interface IInterestIncomeRepo
     {

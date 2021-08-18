@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using ChaosEmeraldsOfIncome.Models;
 
-namespace ChaosEmeraldsOfIncome.Controllers
+namespace ChaosEmeraldsOfIncome.Data
 {
     public class MockInterestIncomeRepo : IInterestIncomeRepo
     {
