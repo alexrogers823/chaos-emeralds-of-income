@@ -1,3 +1,4 @@
+using ChaosEmeraldsOfIncome.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChaosEmeraldsOfIncome.Controllers

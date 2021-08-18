@@ -1,3 +1,4 @@
+using ChaosEmeraldsOfIncome.Data;
 using ChaosEmeraldsOfIncome.Models;
 using Microsoft.AspNetCore.Mvc;
 

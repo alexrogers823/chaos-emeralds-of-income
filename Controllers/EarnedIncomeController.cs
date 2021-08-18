@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AutoMapper;
+using ChaosEmeraldsOfIncome.Data;
 using ChaosEmeraldsOfIncome.Dtos;
 using ChaosEmeraldsOfIncome.Models;
 using Microsoft.AspNetCore.Mvc;
