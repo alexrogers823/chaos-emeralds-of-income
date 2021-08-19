@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
 
 namespace ChaosEmeraldsOfIncome
 {
@@ -26,6 +27,10 @@ namespace ChaosEmeraldsOfIncome
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CEOIContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("CEOIConnection")));
+            services.AddControllers().AddNewtonsoftJson(s => 
+            {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

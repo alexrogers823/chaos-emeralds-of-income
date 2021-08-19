@@ -12,6 +12,8 @@ namespace ChaosEmeraldsOfIncome.Profiles
             // Source -> Target 
             CreateMap<EarnedIncome, EarnedIncomeReadDto>();
             CreateMap<EarnedIncomeCreateDto, EarnedIncome>();
+            CreateMap<EarnedIncomeUpdateDto, EarnedIncome>();
+            CreateMap<EarnedIncome, EarnedIncomeUpdateDto>();
         }
     }
 }
