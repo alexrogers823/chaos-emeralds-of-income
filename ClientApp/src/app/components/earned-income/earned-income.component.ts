@@ -90,7 +90,7 @@ export class EarnedIncomeComponent implements OnInit {
       .addEarnedIncome(earnedIncome.value);
   }
 
-  editEarnedIncome(earnedIncome) {
-    
+  editEarnedIncome(earnedIncome: NgForm) {
+    this.earnedIncomeService.editEarnedIncome(earnedIncome.value);
   }
 }

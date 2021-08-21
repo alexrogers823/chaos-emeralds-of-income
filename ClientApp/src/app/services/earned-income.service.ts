@@ -34,14 +34,14 @@ export class EarnedIncomeService {
       );
   }
 
-  // editEarnedIncome(incomeObj:EarnedIncome): Observable<EarnedIncome> {
-  //   console.log(incomeObj)
+  editEarnedIncome(incomeObj:EarnedIncome): Observable<EarnedIncome> {
+    console.log(incomeObj)
     // search for put or patch request on angular side 
-    // return this.http.post<EarnedIncome>(this._baseUrl, incomeObj, httpOptions)
-    //   .pipe(
-    //     catchError(this.handleError)
-    //   );
-  // }
+    return this.http.post<EarnedIncome>(this._baseUrl, incomeObj, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
   private handleError(error:HttpErrorResponse) {
     if (error.status === 0) {

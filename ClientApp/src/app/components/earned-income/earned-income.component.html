@@ -16,7 +16,7 @@
         <td>{{ job.frequency }}</td>
         <td>{{ job.incomeAmount | currency }}</td>
         <td>
-          <button class="btn btn-outline-secondary btn-sm">Edit</button>
+          <button class="btn btn-outline-secondary btn-sm" (click)="editEarnedIncome(earnedIncome)">Edit</button>
         </td>
       </tr>
       <tr *ngIf="earnedIncomeTotal$ | async as earnedIncomeTotal">
