@@ -27,7 +27,9 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
         public IEnumerable<InterestIncome> GetAllInterestIncome()
         {
-            return _context.InterestIncome.ToList();
+            return _context.InterestIncome
+                .ToList()
+                .OrderByDescending(p => p.InterestDollar);
         }
 
         public InterestIncome GetInterestIncomeById(int id)
