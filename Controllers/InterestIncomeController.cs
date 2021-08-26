@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using AutoMapper;
 using ChaosEmeraldsOfIncome.Data;
+using ChaosEmeraldsOfIncome.Dtos;
 using ChaosEmeraldsOfIncome.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,33 +12,39 @@ namespace ChaosEmeraldsOfIncome.Controllers
     public class InterestIncomeController : ControllerBase
     {
         private readonly IInterestIncomeRepo _repo;
+        private readonly IMapper _mapper;
 
-        public InterestIncomeController(IInterestIncomeRepo repo)
+        public InterestIncomeController(IInterestIncomeRepo repo, IMapper mapper)
         {
             _repo = repo;       
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public ActionResult<InterestIncome> GetInterestIncome()
+        public ActionResult<IEnumerable<InterestIncomeReadDto>> GetInterestIncome()
         {
             var interestIncome = _repo.GetAllInterestIncome();
 
-            return Ok(interestIncome);
+            return Ok(_mapper.Map<InterestIncomeReadDto>(interestIncome));
         }
 
         [HttpGet("{id}", Name="GetInterestIncomeById")]
-        public ActionResult<InterestIncome> GetInterestIncomeById(int id)
+        public ActionResult<InterestIncomeReadDto> GetInterestIncomeById(int id)
         {
             var interestIncome = _repo.GetInterestIncomeById(id);
-            return Ok(interestIncome);
+            return Ok(_mapper.Map<InterestIncomeReadDto>(interestIncome));
         }
 
         [HttpPost]
-        public ActionResult<InterestIncome> AddInterestIncome(InterestIncome newIncome)
+        public ActionResult<InterestIncomeReadDto> AddInterestIncome(InterestIncomeCreateDto newIncomeCreateDto)
         {
-            _repo.AddInterestIncome(newIncome);
+            var incomeModel = _mapper.Map<InterestIncome>(newIncomeCreateDto);
+            _repo.AddInterestIncome(incomeModel);
             _repo.SaveChanges();
-            return CreatedAtRoute(new {Id = 9}, newIncome);
+
+            var incomeReadDto = _mapper.Map<InterestIncomeReadDto>(incomeModel);
+
+            return CreatedAtRoute(nameof(GetInterestIncomeById), new {Id = incomeReadDto.Id}, incomeReadDto);
         }
 
         [HttpPut]
