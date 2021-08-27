@@ -5,6 +5,11 @@ namespace ChaosEmeraldsOfIncome.Data
 {
     public class MockEarnedIncomeRepo : IEarnedIncomeRepo
     {
+        public void ArchiveEarnedIncome(EarnedIncome income)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<EarnedIncome> GetEarnedIncome()
         {
             var earnedIncome = new List<EarnedIncome>

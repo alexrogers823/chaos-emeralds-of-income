@@ -9,6 +9,7 @@ namespace ChaosEmeraldsOfIncome.Data
         InterestIncome GetInterestIncomeById(int id);
         void AddInterestIncome(InterestIncome newIncome);
         void UpdateInterestIncome(InterestIncome incomeObj);
+        void ArchiveInterestIncome(InterestIncome incomeObj);
         bool SaveChanges();
     }
 }

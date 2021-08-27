@@ -15,6 +15,11 @@ namespace ChaosEmeraldsOfIncome.Data
 
         }
 
+        public void ArchiveInterestIncome(InterestIncome incomeObj)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<InterestIncome> GetAllInterestIncome()
         {
             var interestIncome = new List<InterestIncome>

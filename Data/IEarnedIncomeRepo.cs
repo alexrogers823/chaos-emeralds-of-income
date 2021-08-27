@@ -12,6 +12,7 @@ namespace ChaosEmeraldsOfIncome.Data
         void InsertEarnedIncome(EarnedIncome income);
 
         void UpdateEarnedIncome(EarnedIncome income);
+        void ArchiveEarnedIncome(EarnedIncome income);
         bool SaveChanges();
     }
 }
