@@ -3,6 +3,7 @@ using AutoMapper;
 using ChaosEmeraldsOfIncome.Data;
 using ChaosEmeraldsOfIncome.Dtos;
 using ChaosEmeraldsOfIncome.Models;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChaosEmeraldsOfIncome.Controllers
@@ -47,12 +48,28 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return CreatedAtRoute(nameof(GetInterestIncomeById), new {Id = incomeReadDto.Id}, incomeReadDto);
         }
 
-        [HttpPut]
-        public ActionResult<InterestIncome> UpdateInterestIncome(InterestIncome incomeObj)
+        [HttpPatch("{id}")]
+        public ActionResult UpdateInterestIncome(int id, JsonPatchDocument<InterestIncomeUpdateDto> patchDoc)
         {
-            _repo.UpdateInterestIncome(incomeObj);
+            var incomeModel = _repo.GetInterestIncomeById(id);
+            if (incomeModel == null)
+            {
+                return NotFound();
+            }
+
+            var incomePatch = _mapper.Map<InterestIncomeUpdateDto>(incomeModel);
+            patchDoc.ApplyTo(incomePatch, ModelState);
+
+            if (!TryValidateModel(incomePatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(incomePatch, incomeModel);
+            _repo.UpdateInterestIncome(incomeModel);
             _repo.SaveChanges();
-            return Ok(incomeObj); //Change this to reflect updated income
+
+            return NoContent();
         }
     }
 }
