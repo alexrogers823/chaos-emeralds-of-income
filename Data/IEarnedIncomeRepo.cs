@@ -9,10 +9,10 @@ namespace ChaosEmeraldsOfIncome.Data
         // EarnedIncome InsertEarnedIncome(EarnedIncome income);
 
         EarnedIncome GetEarnedIncomeById(int id);
+        EarnedIncome ArchiveEarnedIncome(EarnedIncome income);
         void InsertEarnedIncome(EarnedIncome income);
 
         void UpdateEarnedIncome(EarnedIncome income);
-        void ArchiveEarnedIncome(EarnedIncome income);
         bool SaveChanges();
     }
 }

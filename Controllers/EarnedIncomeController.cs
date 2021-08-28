@@ -78,5 +78,24 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
             return NoContent();
         }
+
+        [HttpPut("{id}")]
+        public ActionResult ArchiveEarnedIncome(int id)
+        {
+            var incomeModel = _repo.GetEarnedIncomeById(id);
+
+            if (incomeModel == null)
+            {
+                return NotFound();
+            }
+
+            var archived = _repo.ArchiveEarnedIncome(incomeModel);
+
+            _mapper.Map(archived, incomeModel);
+            _repo.UpdateEarnedIncome(incomeModel);
+            _repo.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

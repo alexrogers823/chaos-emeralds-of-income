@@ -5,7 +5,7 @@ namespace ChaosEmeraldsOfIncome.Data
 {
     public class MockEarnedIncomeRepo : IEarnedIncomeRepo
     {
-        public void ArchiveEarnedIncome(EarnedIncome income)
+        public EarnedIncome ArchiveEarnedIncome(EarnedIncome income)
         {
             throw new System.NotImplementedException();
         }

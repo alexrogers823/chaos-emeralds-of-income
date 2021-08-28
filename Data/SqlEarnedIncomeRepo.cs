@@ -15,9 +15,15 @@ namespace ChaosEmeraldsOfIncome.Controllers
             _context = context;
         }
 
-        public void ArchiveEarnedIncome(EarnedIncome income)
+        public EarnedIncome ArchiveEarnedIncome(EarnedIncome income)
         {
-            throw new NotImplementedException();
+            return new EarnedIncome{ 
+                            UserId=income.Id, 
+                            IncomeTitle=income.IncomeTitle, 
+                            IncomeAmount=income.IncomeAmount, 
+                            Frequency=income.Frequency, 
+                            IsCurrent=false
+                        };
         }
 
         public IEnumerable<EarnedIncome> GetEarnedIncome()
