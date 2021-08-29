@@ -25,9 +25,18 @@ namespace ChaosEmeraldsOfIncome.Controllers
             _context.InterestIncome.Add(newIncome);
         }
 
-        public void ArchiveInterestIncome(InterestIncome incomeObj)
+        public InterestIncome ArchiveInterestIncome(InterestIncome incomeObj)
         {
-            throw new NotImplementedException();
+            return new InterestIncome
+            {
+                Id=incomeObj.Id,
+                UserId=incomeObj.UserId,
+                Name=incomeObj.Name,
+                TotalSavings=incomeObj.TotalSavings,
+                InterestPercent=incomeObj.InterestPercent,
+                InterestDollar=incomeObj.InterestDollar,
+                IsActive=false
+            };
         }
 
         public IEnumerable<InterestIncome> GetAllInterestIncome()

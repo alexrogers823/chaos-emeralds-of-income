@@ -7,9 +7,9 @@ namespace ChaosEmeraldsOfIncome.Data
     {
         IEnumerable<InterestIncome> GetAllInterestIncome();
         InterestIncome GetInterestIncomeById(int id);
+        InterestIncome ArchiveInterestIncome(InterestIncome incomeObj);
         void AddInterestIncome(InterestIncome newIncome);
         void UpdateInterestIncome(InterestIncome incomeObj);
-        void ArchiveInterestIncome(InterestIncome incomeObj);
         bool SaveChanges();
     }
 }

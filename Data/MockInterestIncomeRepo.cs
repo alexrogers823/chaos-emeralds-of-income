@@ -15,7 +15,7 @@ namespace ChaosEmeraldsOfIncome.Data
 
         }
 
-        public void ArchiveInterestIncome(InterestIncome incomeObj)
+        public InterestIncome ArchiveInterestIncome(InterestIncome incomeObj)
         {
             throw new NotImplementedException();
         }
