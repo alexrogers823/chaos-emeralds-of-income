@@ -23,6 +23,10 @@ export class InterestIncomeService {
         tap(obj => console.log('added interest income', obj))
       );
   }
+
+  archiveInterestIncome(incomeObj:InterestIncome) {
+    console.log('attempting archive...')
+  }
 }
 
 const interestIncome_sample:InterestIncome[] = [

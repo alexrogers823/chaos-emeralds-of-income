@@ -12,6 +12,7 @@
       <td>{{ account.interestDollar | currency }}</td>
       <td>
         <button class="btn btn-outline-secondary btn-sm">Edit</button>
+        <button class="btn btn-outline-danger btn-sm">Archive</button>
       </td>
     </tr>
     <tr *ngIf="interestIncomeTotal$ | async as total">
