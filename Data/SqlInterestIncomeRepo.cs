@@ -58,7 +58,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
         public bool SaveChanges()
         {
-            return true;
+            return (_context.SaveChanges() >= 0);
         }
 
         public void UpdateInterestIncome(InterestIncome incomeObj)
