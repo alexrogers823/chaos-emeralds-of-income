@@ -4,7 +4,7 @@ namespace ChaosEmeraldsOfIncome.Data
 {
     public class MockUserRepo : IUserRepo
     {
-        public void AddUser()
+        public void AddUser(User userObj)
         {
             throw new System.NotImplementedException();
         }

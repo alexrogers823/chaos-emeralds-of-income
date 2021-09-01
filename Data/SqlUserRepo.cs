@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using ChaosEmeraldsOfIncome.Models;
 
@@ -11,9 +12,14 @@ namespace ChaosEmeraldsOfIncome.Data
         {
             _context = context;
         }
-        public void AddUser()
+        public void AddUser(User userObj)
         {
-            throw new System.NotImplementedException();
+            if (userObj == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            _context.Users.Add(userObj);
         }
 
         public User LoginUser(string username, string password)
@@ -23,7 +29,7 @@ namespace ChaosEmeraldsOfIncome.Data
 
         public User LoginUser(string example)
         {
-            throw new System.NotImplementedException();
+            return _context.Users.FirstOrDefault(p => p.Name == "Nonya Business");
         }
 
         public User LogoutUser()
@@ -38,7 +44,7 @@ namespace ChaosEmeraldsOfIncome.Data
 
         public bool SetExampleUser(string example)
         {
-            throw new System.NotImplementedException();
+            return example != null;
         }
     }
 }

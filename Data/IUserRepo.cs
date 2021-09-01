@@ -8,7 +8,7 @@ namespace ChaosEmeraldsOfIncome.Data
         User LoginUser(string example);
         User LogoutUser();
         bool SetExampleUser(string example);
-        void AddUser();
+        void AddUser(User userObj);
         bool SaveChanges();
     }
 }
