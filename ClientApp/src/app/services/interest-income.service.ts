@@ -24,6 +24,10 @@ export class InterestIncomeService {
       );
   }
 
+  editInterestIncome(incomeObj:InterestIncome) {
+    // when user presses edit button, send a request to server
+  }
+
   archiveInterestIncome(incomeObj:InterestIncome) {
     console.log('attempting archive...')
   }
