@@ -11,4 +11,8 @@ export class UserService {
   loginUser() {
     return this.http.get<User>(this._baseUrl);
   }
+
+  logoutUser() {
+
+  }
 }

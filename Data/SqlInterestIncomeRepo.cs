@@ -42,8 +42,9 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public IEnumerable<InterestIncome> GetAllInterestIncome()
         {
             return _context.InterestIncome
-                .ToList()
-                .OrderByDescending(p => p.InterestDollar);
+                .Where(p => p.IsActive == true)
+                .OrderByDescending(p => p.InterestDollar)
+                .ToList();
         }
 
         public InterestIncome GetInterestIncomeById(int id)

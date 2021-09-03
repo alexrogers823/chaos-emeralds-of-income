@@ -29,8 +29,9 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public IEnumerable<EarnedIncome> GetEarnedIncome()
         {
             return _context.EarnedIncome
-                .ToList()
-                .OrderByDescending(p => p.IncomeAmount);
+                .Where(p => p.IsCurrent == true)
+                .OrderByDescending(p => p.IncomeAmount)
+                .ToList();
         }
 
         public EarnedIncome GetEarnedIncomeById(int id)
