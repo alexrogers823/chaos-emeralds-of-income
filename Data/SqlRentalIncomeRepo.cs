@@ -26,6 +26,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
         public IEnumerable<RentalIncome> GetAllRentalProperties()
         {
             return _context.RentalIncome
+                // .Where(p => p.User == user) // retrieve only for logged in user
                 .Where(p => p.IsActive == true)
                 .ToList();
         }

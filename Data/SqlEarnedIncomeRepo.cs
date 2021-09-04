@@ -30,6 +30,7 @@ namespace ChaosEmeraldsOfIncome.Controllers
         {
             return _context.EarnedIncome
                 .Where(p => p.IsCurrent == true)
+                // .Where(p => p.User == user) // retrieve only for logged in user
                 .OrderByDescending(p => p.IncomeAmount)
                 .ToList();
         }

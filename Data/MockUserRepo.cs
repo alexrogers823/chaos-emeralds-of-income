@@ -9,6 +9,11 @@ namespace ChaosEmeraldsOfIncome.Data
             throw new System.NotImplementedException();
         }
 
+        public void EditUser(User user)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public User LoginUser(string username, string password)
         {
             throw new System.NotImplementedException();

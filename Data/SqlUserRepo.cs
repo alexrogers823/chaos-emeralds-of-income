@@ -22,6 +22,11 @@ namespace ChaosEmeraldsOfIncome.Data
             _context.Users.Add(userObj);
         }
 
+        public void EditUser(User user)
+        {
+            
+        }
+
         public User LoginUser(string username, string password)
         {
             return _context.Users.FirstOrDefault(p => p.Name == username);
