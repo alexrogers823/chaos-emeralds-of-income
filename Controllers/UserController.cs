@@ -1,5 +1,6 @@
 using AutoMapper;
 using ChaosEmeraldsOfIncome.Data;
+using ChaosEmeraldsOfIncome.Dtos;
 using ChaosEmeraldsOfIncome.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -33,28 +34,28 @@ namespace ChaosEmeraldsOfIncome.Controllers
             return Ok(exampleUser);
         }
 
-        // [HttpPatch("{id}")]
-        // public ActionResult EditUser(int id, JsonPatchDocument<UserUpdateDto> patchDoc)
-        // {
-        //     // var userModel = _repo.EditUser(id); //Get User by Id
-        //     if (userModel == null)
-        //     {
-        //         return NotFound();
-        //     }
+        [HttpPatch("{id}")]
+        public ActionResult EditUser(int id, JsonPatchDocument<UserUpdateDto> patchDoc)
+        {
+            var userModel = _repo.GetUserById(id); //Get User by Id
+            if (userModel == null)
+            {
+                return NotFound();
+            }
 
-        //     var userPatch = _mapper.Map<UserUpdateDto>(userModel);
-        //     patchDoc.ApplyTo(userPatch, ModelState);
+            var userPatch = _mapper.Map<UserUpdateDto>(userModel);
+            patchDoc.ApplyTo(userPatch, ModelState);
 
-        //     if (!TryValidateModel(userPatch))
-        //     {
-        //         return ValidationProblem(ModelState);
-        //     }
+            if (!TryValidateModel(userPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
 
-        //     _mapper.Map(userPatch, userModel);
-        //     _repo.EditUser(userModel);
-        //     _repo.SaveChanges();
+            _mapper.Map(userPatch, userModel);
+            _repo.EditUser(userModel);
+            _repo.SaveChanges();
 
-        //     return NoContent();
-        // }
+            return NoContent();
+        }
     }
 }
