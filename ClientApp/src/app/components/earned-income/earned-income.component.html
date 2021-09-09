@@ -16,8 +16,8 @@
         <td>{{ job.frequency }}</td>
         <td>{{ job.incomeAmount | currency }}</td>
         <td>
-          <button class="btn btn-outline-secondary btn-sm" (click)="editEarnedIncome(earnedIncome)">Edit</button>
-          <button class="btn btn-outline-danger btn-sm">Archive</button>
+          <button class="btn btn-outline-secondary btn-sm" (click)="editEarnedIncome(updatedIncome)">Edit</button>
+          <button class="btn btn-outline-danger btn-sm" (click)="archiveEarnedIncome(archivedIncome)">Archive</button>
         </td>
       </tr>
       <tr *ngIf="earnedIncomeTotal$ | async as earnedIncomeTotal">
@@ -31,7 +31,7 @@
   </table>
 
   <br />
-  <form #earnedIncome="ngForm" (ngSubmit)="addEarnedIncome(earnedIncome)">
+  <form #newIncome="ngForm" (ngSubmit)="addEarnedIncome(newIncome)">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Add Job" aria-label="incomeTitle" name="incomeTitle" ngModel #incomeTitle="ngModel" />
       <input type="number" class="form-control" placeholder="Add Income" aria-label="incomeAmount" name="incomeAmount" ngModel #incomeAmount="ngModel" />

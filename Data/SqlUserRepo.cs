@@ -27,6 +27,11 @@ namespace ChaosEmeraldsOfIncome.Data
             
         }
 
+        public User GetUserById(int id)
+        {
+            return _context.Users.FirstOrDefault(p => p.Id == id);
+        }
+
         public User LoginUser(string username, string password)
         {
             return _context.Users.FirstOrDefault(p => p.Name == username);

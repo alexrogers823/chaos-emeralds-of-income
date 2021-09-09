@@ -85,12 +85,16 @@ export class EarnedIncomeComponent implements OnInit {
     return this.currentIncome >= this.goalIncome;
   }
 
-  addEarnedIncome(earnedIncome: NgForm) {
+  addEarnedIncome(newIncome: NgForm) {
     this.earnedIncomeService
-      .addEarnedIncome(earnedIncome.value);
+      .addEarnedIncome(newIncome.value);
   }
 
-  editEarnedIncome(earnedIncome: NgForm) {
-    this.earnedIncomeService.editEarnedIncome(earnedIncome.value);
+  editEarnedIncome(updatedIncome: NgForm) {
+    this.earnedIncomeService.editEarnedIncome(updatedIncome.value);
+  }
+
+  archiveEarnedIncome(archivedIncome: NgForm) {
+    this.earnedIncomeService.archiveEarnedIncome(archivedIncome.value);
   }
 }

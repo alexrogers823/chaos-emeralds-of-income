@@ -44,7 +44,7 @@ export class EarnedIncomeService {
   }
 
   archiveEarnedIncome(incomeObj:EarnedIncome) {
-    console.log('attempting archive...')
+    console.log(`attempting archive on ${incomeObj.incomeTitle}`);
   }
 
   private handleError(error:HttpErrorResponse) {

@@ -14,6 +14,11 @@ namespace ChaosEmeraldsOfIncome.Data
             throw new System.NotImplementedException();
         }
 
+        public User GetUserById(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public User LoginUser(string username, string password)
         {
             throw new System.NotImplementedException();
