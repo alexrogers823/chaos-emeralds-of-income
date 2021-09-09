@@ -42,6 +42,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UserService } from './services/user.service';
 import { BusinessIncomeService } from './services/business-income.service';
 import { DividendIncomeService } from './services/dividend-income.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { DividendIncomeService } from './services/dividend-income.service';
     DividendIncomeService,
     ResourcesService,
     NotesService,
-    UserService
+    UserService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
