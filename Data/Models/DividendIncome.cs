@@ -10,6 +10,7 @@ namespace ChaosEmeraldsOfIncome.Models
         public int UserId { get; set; }
         public int InvestmentId { get; set; }
         public double DividendPayout { get; set; }
+        public bool IsActive { get; set; }
         public DateTime? DateAdded { get; set; }
     }
 }

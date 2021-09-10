@@ -11,6 +11,7 @@ namespace ChaosEmeraldsOfIncome.Models
         public string Title { get; set; }
         public string Frequency { get; set; }
         public double Amount { get; set; }
+        public bool IsActive { get; set; }
         public DateTime? LastUpdated { get; set; }
     }
 }

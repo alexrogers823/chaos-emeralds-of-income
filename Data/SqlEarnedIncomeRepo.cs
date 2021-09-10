@@ -22,17 +22,23 @@ namespace ChaosEmeraldsOfIncome.Controllers
                             IncomeTitle=income.IncomeTitle, 
                             IncomeAmount=income.IncomeAmount, 
                             Frequency=income.Frequency, 
-                            IsCurrent=false
+                            IsActive=false
                         };
         }
 
         public IEnumerable<EarnedIncome> GetEarnedIncome()
         {
-            return _context.EarnedIncome
-                .Where(p => p.IsCurrent == true)
+            bool showArchived = false; //temporary
+
+            IEnumerable<EarnedIncome> query = _context.EarnedIncome
                 // .Where(p => p.User == user) // retrieve only for logged in user
-                .OrderByDescending(p => p.IncomeAmount)
-                .ToList();
+                .OrderByDescending(p => p.IncomeAmount);
+
+            if (!showArchived) {
+                query = query.Where(p => p.IsActive == true);
+            };
+            
+            return query.ToList();
         }
 
         public EarnedIncome GetEarnedIncomeById(int id)

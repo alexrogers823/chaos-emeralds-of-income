@@ -12,7 +12,7 @@ namespace ChaosEmeraldsOfIncome.Models
         public double Revenue { get; set; }
         public double Expenses { get; set; }
         public double Profit { get; set; }
-        public bool IsCurrent { get; set; }
+        public bool IsActive { get; set; }
         public DateTime? LastUpdated { get; set; }
     }
 }

@@ -41,11 +41,17 @@ namespace ChaosEmeraldsOfIncome.Controllers
 
         public IEnumerable<InterestIncome> GetAllInterestIncome()
         {
-            return _context.InterestIncome
-                .Where(p => p.IsActive == true)
+            bool showArchived = false; //temporary
+
+            IEnumerable<InterestIncome> query = _context.InterestIncome
                 // .Where(p => p.User == user) // retrieve only for logged in user
-                .OrderByDescending(p => p.InterestDollar)
-                .ToList();
+                .OrderByDescending(p => p.InterestDollar);
+
+            if (!showArchived) {
+                query = query.Where(p => p.IsActive == true);
+            };
+            
+            return query.ToList();
         }
 
         public InterestIncome GetInterestIncomeById(int id)
