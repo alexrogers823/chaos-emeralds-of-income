@@ -32,6 +32,7 @@ import {
   loginLink,
   mainPageLink, 
   netWorthLink, 
+  notFoundLink, 
   rentalIncomeLink, 
   royaltyIncomeLink
 } from './urls';
@@ -43,6 +44,7 @@ import { UserService } from './services/user.service';
 import { BusinessIncomeService } from './services/business-income.service';
 import { DividendIncomeService } from './services/dividend-income.service';
 import { LoginService } from './services/login.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { LoginService } from './services/login.service';
     DividendIncomeComponent,
     BusinessIncomeComponent,
     CapitalGainsComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -69,6 +72,7 @@ import { LoginService } from './services/login.service';
     RouterModule.forRoot([
       { path: '', redirectTo: loginLink, pathMatch: 'full' },
       { path: loginLink, component: LoginComponent },
+      { path: notFoundLink, component: NotFoundComponent },
       { path: mainPageLink, component: MainPageComponent },
       { path: netWorthLink, component: NetWorthComponent },
       { path: earnedIncomeLink, component: EarnedIncomeComponent },
