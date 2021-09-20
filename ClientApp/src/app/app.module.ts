@@ -75,7 +75,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
       { path: notFoundLink, component: NotFoundComponent },
       { path: mainPageLink, component: MainPageComponent },
       { path: netWorthLink, component: NetWorthComponent },
-      { path: earnedIncomeLink, component: EarnedIncomeComponent },
+      { path: earnedIncomeLink, component: EarnedIncomeComponent}, //canActivate: [LoginComponent]
       { path: interestIncomeLink, component: InterestIncomeComponent },
       { path: royaltyIncomeLink, component: RoyaltyIncomeComponent },
       { path: rentalIncomeLink, component: RentalIncomeComponent },

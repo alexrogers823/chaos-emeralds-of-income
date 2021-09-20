@@ -9,8 +9,8 @@ namespace ChaosEmeraldsOfIncome.Models
         [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        // [ForeignKey("UserId")]
+        // public User User { get; set; }
         [Required]
         [StringLength(50, ErrorMessage = "{0} cannot exceed {1} characters")]
         public string IncomeTitle { get; set; }

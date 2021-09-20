@@ -3,15 +3,17 @@ using System;
 using ChaosEmeraldsOfIncome.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ChaosEmeraldsOfIncome.Migrations
 {
     [DbContext(typeof(CEOIContext))]
-    partial class CEOIContextModelSnapshot : ModelSnapshot
+    [Migration("20210920010428_RemovedUserForeignKey")]
+    partial class RemovedUserForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -12,6 +12,14 @@ export class LoginService implements CanActivate {
         return: state.url
       }
     });
-    return false;
+    // return false;
+
+    // const dataExists = !!this.userService.loginUser();
+    const dataExists = true;
+
+    if (!dataExists) {
+      this.router.navigate(['/404'])
+    }
+    return dataExists;
   }
 }

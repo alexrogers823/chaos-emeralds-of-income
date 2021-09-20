@@ -3,15 +3,17 @@ using System;
 using ChaosEmeraldsOfIncome.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ChaosEmeraldsOfIncome.Migrations
 {
     [DbContext(typeof(CEOIContext))]
-    partial class CEOIContextModelSnapshot : ModelSnapshot
+    [Migration("20210920010107_StandardizedIsActiveColumn")]
+    partial class StandardizedIsActiveColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -136,6 +138,8 @@ namespace ChaosEmeraldsOfIncome.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("EarnedIncome");
                 });
 
@@ -221,6 +225,8 @@ namespace ChaosEmeraldsOfIncome.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("InterestIncome");
                 });
@@ -358,6 +364,28 @@ namespace ChaosEmeraldsOfIncome.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ChaosEmeraldsOfIncome.Models.EarnedIncome", b =>
+                {
+                    b.HasOne("ChaosEmeraldsOfIncome.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ChaosEmeraldsOfIncome.Models.InterestIncome", b =>
+                {
+                    b.HasOne("ChaosEmeraldsOfIncome.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
